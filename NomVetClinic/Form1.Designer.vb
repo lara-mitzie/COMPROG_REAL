@@ -35,9 +35,11 @@ Partial Class Form1
         Me.pnlAbovebuttons = New System.Windows.Forms.Panel()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.pnlAboveTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlBack.SuspendLayout()
         Me.pnlButtons.SuspendLayout()
         Me.pnlAbovebuttons.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlBack
@@ -63,6 +65,7 @@ Partial Class Form1
         'pnlButtons
         '
         Me.pnlButtons.BackColor = System.Drawing.Color.White
+        Me.pnlButtons.Controls.Add(Me.PictureBox1)
         Me.pnlButtons.Controls.Add(Me.btnSignIn)
         Me.pnlButtons.Controls.Add(Me.btnAboutUs)
         Me.pnlButtons.Controls.Add(Me.btnhmm)
@@ -160,6 +163,14 @@ Partial Class Form1
         'pnlAboveTimer
         '
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(1748, 24)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 51)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -173,6 +184,7 @@ Partial Class Form1
         Me.pnlBack.ResumeLayout(False)
         Me.pnlButtons.ResumeLayout(False)
         Me.pnlAbovebuttons.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -188,4 +200,5 @@ Partial Class Form1
     Friend WithEvents btnhmm As Button
     Friend WithEvents btnServices As Button
     Friend WithEvents btnSignIn As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
