@@ -26,6 +26,7 @@ Class Form1
 
     Private Sub MainLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
+        positonsPanels.posProfPic(pctProfPicture)
         PanelAboveSlide.InitializePanel(pnlAbovebuttons, pnlAboveTimer)
         ButtonColorChanger.ChangeButtonColor("Interface1", btnServices, btnhmm, btnHome, btnAboutUs)
     End Sub
@@ -87,8 +88,9 @@ Class Form1
         MakeButtonRounded(btnServices, 48)
         MakeButtonRounded(btnhmm, 48)
         MakeButtonRounded(btnAboutUs, 48)
-
         MakeButtonRounded(btnSignIn, 48)
+        RoundPictureBox(pctProfPicture)
+
     End Sub
 
 

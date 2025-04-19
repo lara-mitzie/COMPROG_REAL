@@ -27,6 +27,7 @@ Partial Class Form1
         Me.pnlBack = New System.Windows.Forms.Panel()
         Me.VScrollBar = New System.Windows.Forms.VScrollBar()
         Me.pnlButtons = New System.Windows.Forms.Panel()
+        Me.pctProfPicture = New System.Windows.Forms.PictureBox()
         Me.btnSignIn = New System.Windows.Forms.Button()
         Me.btnAboutUs = New System.Windows.Forms.Button()
         Me.btnhmm = New System.Windows.Forms.Button()
@@ -35,11 +36,10 @@ Partial Class Form1
         Me.pnlAbovebuttons = New System.Windows.Forms.Panel()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.pnlAboveTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlBack.SuspendLayout()
         Me.pnlButtons.SuspendLayout()
+        CType(Me.pctProfPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAbovebuttons.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlBack
@@ -65,7 +65,7 @@ Partial Class Form1
         'pnlButtons
         '
         Me.pnlButtons.BackColor = System.Drawing.Color.White
-        Me.pnlButtons.Controls.Add(Me.PictureBox1)
+        Me.pnlButtons.Controls.Add(Me.pctProfPicture)
         Me.pnlButtons.Controls.Add(Me.btnSignIn)
         Me.pnlButtons.Controls.Add(Me.btnAboutUs)
         Me.pnlButtons.Controls.Add(Me.btnhmm)
@@ -77,6 +77,15 @@ Partial Class Form1
         Me.pnlButtons.Size = New System.Drawing.Size(1902, 90)
         Me.pnlButtons.TabIndex = 1
         '
+        'pctProfPicture
+        '
+        Me.pctProfPicture.BackColor = System.Drawing.Color.Black
+        Me.pctProfPicture.Location = New System.Drawing.Point(1722, 24)
+        Me.pctProfPicture.Name = "pctProfPicture"
+        Me.pctProfPicture.Size = New System.Drawing.Size(50, 45)
+        Me.pctProfPicture.TabIndex = 4
+        Me.pctProfPicture.TabStop = False
+        '
         'btnSignIn
         '
         Me.btnSignIn.FlatAppearance.BorderSize = 0
@@ -84,9 +93,10 @@ Partial Class Form1
         Me.btnSignIn.Font = New System.Drawing.Font("Glacial Indifference", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btnSignIn.Location = New System.Drawing.Point(1637, 18)
         Me.btnSignIn.Name = "btnSignIn"
-        Me.btnSignIn.Size = New System.Drawing.Size(134, 57)
+        Me.btnSignIn.Size = New System.Drawing.Size(159, 57)
         Me.btnSignIn.TabIndex = 0
         Me.btnSignIn.Text = "SIGN IN"
+        Me.btnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSignIn.UseVisualStyleBackColor = True
         '
         'btnAboutUs
@@ -163,14 +173,6 @@ Partial Class Form1
         'pnlAboveTimer
         '
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(1748, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(75, 51)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -183,8 +185,8 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.pnlBack.ResumeLayout(False)
         Me.pnlButtons.ResumeLayout(False)
+        CType(Me.pctProfPicture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAbovebuttons.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -200,5 +202,5 @@ Partial Class Form1
     Friend WithEvents btnhmm As Button
     Friend WithEvents btnServices As Button
     Friend WithEvents btnSignIn As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pctProfPicture As PictureBox
 End Class

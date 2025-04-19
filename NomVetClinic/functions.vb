@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports Microsoft.VisualBasic.Logging
 
 
 'timing ng pagbaba ng panel na ansa taas yung may x don 
@@ -81,6 +82,15 @@ Module UIHelpers
         panel.Region = New Region(path)
     End Sub
 
+    Public Sub RoundPictureBox(picture As PictureBox)
+        Dim path As New GraphicsPath()
+        path.StartFigure()
+        Dim gp As New GraphicsPath()
+        gp.AddEllipse(0, 0, picture.Width, picture.Height)
+        picture.Region = New Region(gp)
+
+    End Sub
+
 End Module
 
 'postion ng panels and buttons
@@ -94,6 +104,15 @@ Module positonsPanels
 
 
     ' End Sub
+
+    Public Sub posProfPic(picture As PictureBox)
+        Dim x As Integer = 1300
+        Dim y As Integer = 18
+
+        picture.Location = New Point(x, y)
+
+
+    End Sub
 
     Public Sub BookPosition(button As Button)
         Dim x As Integer = 320
