@@ -36,6 +36,7 @@ Partial Class Form1
         Me.pnlAbovebuttons = New System.Windows.Forms.Panel()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.pnlAboveTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlBack.SuspendLayout()
         Me.pnlButtons.SuspendLayout()
         CType(Me.pctProfPicture, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +45,7 @@ Partial Class Form1
         '
         'pnlBack
         '
+        Me.pnlBack.Controls.Add(Me.Panel1)
         Me.pnlBack.Controls.Add(Me.VScrollBar)
         Me.pnlBack.Controls.Add(Me.pnlButtons)
         Me.pnlBack.Controls.Add(Me.pnlAbovebuttons)
@@ -120,7 +122,7 @@ Partial Class Form1
         Me.btnhmm.Name = "btnhmm"
         Me.btnhmm.Size = New System.Drawing.Size(187, 57)
         Me.btnhmm.TabIndex = 2
-        Me.btnhmm.Text = "???"
+        Me.btnhmm.Text = "LOCATION"
         Me.btnhmm.UseVisualStyleBackColor = True
         '
         'btnServices
@@ -173,6 +175,14 @@ Partial Class Form1
         'pnlAboveTimer
         '
         '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 111)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1881, 922)
+        Me.Panel1.TabIndex = 3
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -203,4 +213,5 @@ Partial Class Form1
     Friend WithEvents btnServices As Button
     Friend WithEvents btnSignIn As Button
     Friend WithEvents pctProfPicture As PictureBox
+    Friend WithEvents Panel1 As Panel
 End Class

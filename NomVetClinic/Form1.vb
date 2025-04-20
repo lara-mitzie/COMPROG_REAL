@@ -39,8 +39,8 @@ Class Form1
         homePage.Size = New Size(Me.ClientSize.Width, Me.ClientSize.Height)
         homePage.Location = New Point(0, 0)
         homePage.Tag = homePage.Top
-        pnlBack.Size = Me.ClientSize
-        pnlBack.Controls.Add(homePage)
+        Panel1.Size = Me.ClientSize
+        Panel1.Controls.Add(homePage)
 
 
 
@@ -48,27 +48,27 @@ Class Form1
         animalsPage.Size = New Size(Me.ClientSize.Width, Me.ClientSize.Height)
         animalsPage.Location = New Point(0, homePage.Bottom)
         animalsPage.Tag = animalsPage.Top
-        pnlBack.Controls.Add(animalsPage)
+        Panel1.Controls.Add(animalsPage)
 
 
         page3 = New Interface3()
         page3.Size = New Size(Me.ClientSize.Width, Me.ClientSize.Height)
         page3.Location = New Point(0, animalsPage.Bottom)
         page3.Tag = page3.Top
-        pnlBack.Controls.Add(page3)
+        Panel1.Controls.Add(page3)
 
         AboutUs = New Interface4
         AboutUs.Size = New Size(Me.ClientSize.Width, Me.ClientSize.Height)
         AboutUs.Location = New Point(0, page3.Bottom)
         AboutUs.Tag = AboutUs.Top
-        pnlBack.Controls.Add(AboutUs)
+        Panel1.Controls.Add(AboutUs)
 
 
 
 
-        pnlBack.AutoScroll = False
-        pnlBack.Height = Me.ClientSize.Height
-        pnlBack.Width = Me.ClientSize.Width - VScrollBar.Width
+        Panel1.AutoScroll = False
+        Panel1.Height = Me.ClientSize.Height
+        Panel1.Width = Me.ClientSize.Width - VScrollBar.Width
 
         VScrollBar.Minimum = 0
         VScrollBar.Maximum = Math.Max(0, AboutUs.Bottom - pnlBack.Height)
@@ -76,7 +76,6 @@ Class Form1
         VScrollBar.LargeChange = 50
 
     End Sub
-
 
 
 
@@ -96,7 +95,7 @@ Class Form1
 
     'Scroll Bar
     Private Sub vScrollBar_Scroll(sender As Object, e As EventArgs) Handles VScrollBar.Scroll
-        For Each ctrl As Control In pnlBack.Controls
+        For Each ctrl As Control In Panel1.Controls
             ctrl.Top = CInt(ctrl.Tag) - VScrollBar.Value
         Next
     End Sub
@@ -156,7 +155,7 @@ Class Form1
     End Sub
 
     Private Sub scrollTimer_Tick(sender As Object, e As EventArgs) Handles scrollTimer.Tick
-        ApplySmoothScroll(VScrollBar, pnlBack, scrollTimer)
+        ApplySmoothScroll(VScrollBar, Panel1, scrollTimer)
 
     End Sub
 

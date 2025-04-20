@@ -1,0 +1,16 @@
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\bin\Debug\NomVetClinic.exe.config
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\bin\Debug\NomVetClinic.exe
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\bin\Debug\NomVetClinic.pdb
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\bin\Debug\NomVetClinic.xml
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.vbproj.AssemblyReference.cache
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Form1.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Resources.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.vbproj.GenerateResource.cache
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.vbproj.CoreCompileInputs.cache
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.exe
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.xml
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.pdb
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Interface2.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Interface3.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Interface1.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Interface4.resources

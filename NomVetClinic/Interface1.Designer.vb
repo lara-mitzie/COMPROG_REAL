@@ -34,7 +34,7 @@ Partial Class Interface1
         Me.pctHomePage.Image = CType(resources.GetObject("pctHomePage.Image"), System.Drawing.Image)
         Me.pctHomePage.Location = New System.Drawing.Point(0, 0)
         Me.pctHomePage.Name = "pctHomePage"
-        Me.pctHomePage.Size = New System.Drawing.Size(1902, 903)
+        Me.pctHomePage.Size = New System.Drawing.Size(1881, 922)
         Me.pctHomePage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pctHomePage.TabIndex = 1
         Me.pctHomePage.TabStop = False
@@ -59,7 +59,7 @@ Partial Class Interface1
         Me.Controls.Add(Me.btnBookNow1)
         Me.Controls.Add(Me.pctHomePage)
         Me.Name = "Interface1"
-        Me.Size = New System.Drawing.Size(1902, 903)
+        Me.Size = New System.Drawing.Size(1881, 922)
         CType(Me.pctHomePage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
