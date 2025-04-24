@@ -1,5 +1,5 @@
 ﻿Imports System.Drawing.Drawing2D
-Imports Microsoft.VisualBasic.Logging
+
 
 
 'timing ng pagbaba ng panel na ansa taas yung may x don 
@@ -58,6 +58,8 @@ Public Module PanelAboveSlide
     End Sub
 End Module
 
+
+
 'making the panels and button rounded 
 Module UIHelpers
 
@@ -92,6 +94,8 @@ Module UIHelpers
     End Sub
 
 End Module
+
+
 
 'postion ng panels and buttons
 Module positonsPanels
@@ -132,6 +136,8 @@ Module positonsPanels
 
 End Module
 
+
+
 'smooth scroll nasa pangalan na oh
 Module smoothScroll
     Public scrollTargetY As Integer
@@ -162,6 +168,7 @@ Module smoothScroll
     End Sub
 End Module
 
+
 'colors ng buttons or panels
 Module GradientHelper
     Public Sub DrawGradientButton(sender As Object, e As PaintEventArgs, color1 As Color, color2 As Color, Optional direction As Drawing2D.LinearGradientMode = Drawing2D.LinearGradientMode.Horizontal)
@@ -189,7 +196,6 @@ End Module
 
 
 
-
 Module ButtonColorChanger
     ' Method to change the button color based on the current page
     Public Sub ChangeButtonColor(currentPage As String, btnServices As Button, btnHmm As Button, btnHome As Button, btnAboutUs As Button)
@@ -211,4 +217,27 @@ Module ButtonColorChanger
                 btnAboutUs.BackColor = Color.FromArgb(185, 219, 185)
         End Select
     End Sub
+End Module
+
+
+'shadow below the panel
+Module DropShadow
+
+    Public Sub pnlButtonsShadow(graphics As Graphics, panel As Control)
+        Dim shadowHeight As Integer = 3
+
+        Dim rect As New Rectangle(0, panel.Height - shadowHeight, panel.Width, shadowHeight)
+        Using brush As New LinearGradientBrush(rect,
+           Color.FromArgb(120, 0, 0, 0),
+           Color.Transparent,
+           LinearGradientMode.Vertical)
+            graphics.FillRectangle(brush, rect)
+
+        End Using
+
+
+
+
+    End Sub
+
 End Module
