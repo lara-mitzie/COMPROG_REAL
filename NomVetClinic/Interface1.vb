@@ -27,5 +27,7 @@
         btnBookNow1.Invalidate() ' Force the button to repaint
     End Sub
 
+    Private Sub btnBookNow1_Click(sender As Object, e As EventArgs) Handles btnBookNow1.Click
 
+    End Sub
 End Class

@@ -26,7 +26,9 @@ Partial Class Interface2
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Interface2))
         Me.pctAnimals = New System.Windows.Forms.PictureBox()
         Me.timerAbovepnl2 = New System.Windows.Forms.Timer(Me.components)
+        Me.pctLocation = New System.Windows.Forms.PictureBox()
         CType(Me.pctAnimals, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pctLocation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pctAnimals
@@ -40,18 +42,32 @@ Partial Class Interface2
         Me.pctAnimals.TabIndex = 0
         Me.pctAnimals.TabStop = False
         '
+        'pctLocation
+        '
+        Me.pctLocation.BackColor = System.Drawing.Color.Transparent
+        Me.pctLocation.Image = CType(resources.GetObject("pctLocation.Image"), System.Drawing.Image)
+        Me.pctLocation.Location = New System.Drawing.Point(128, 29)
+        Me.pctLocation.Name = "pctLocation"
+        Me.pctLocation.Size = New System.Drawing.Size(114, 95)
+        Me.pctLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pctLocation.TabIndex = 1
+        Me.pctLocation.TabStop = False
+        '
         'Interface2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.pctLocation)
         Me.Controls.Add(Me.pctAnimals)
         Me.Name = "Interface2"
         Me.Size = New System.Drawing.Size(1902, 903)
         CType(Me.pctAnimals, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pctLocation, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents pctAnimals As PictureBox
     Friend WithEvents timerAbovepnl2 As Timer
+    Friend WithEvents pctLocation As PictureBox
 End Class

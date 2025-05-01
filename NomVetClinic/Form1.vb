@@ -20,10 +20,7 @@ Class Form1
     End Sub
 
 
-
-
     'Main load
-
     Private Sub MainLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
 
@@ -91,7 +88,6 @@ Class Form1
 
 
     End Sub
-
 
 
 
@@ -175,4 +171,7 @@ Class Form1
         DropShadow.pnlButtonsShadow(graphic.Graphics, pnlButtons)
     End Sub
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnMinimize.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
 End Class

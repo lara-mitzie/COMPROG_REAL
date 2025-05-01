@@ -45,7 +45,7 @@ Partial Class Interface1
         Me.btnBookNow1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBookNow1.Font = New System.Drawing.Font("Glacial Indifference", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBookNow1.ForeColor = System.Drawing.Color.White
-        Me.btnBookNow1.Location = New System.Drawing.Point(410, 627)
+        Me.btnBookNow1.Location = New System.Drawing.Point(396, 647)
         Me.btnBookNow1.Name = "btnBookNow1"
         Me.btnBookNow1.Size = New System.Drawing.Size(364, 85)
         Me.btnBookNow1.TabIndex = 3

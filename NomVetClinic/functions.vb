@@ -119,8 +119,8 @@ Module positonsPanels
     End Sub
 
     Public Sub BookPosition(button As Button)
-        Dim x As Integer = 320
-        Dim y As Integer = 590
+        Dim x As Integer = 330
+        Dim y As Integer = 605
 
         button.Location = New Point(x, y)
     End Sub
@@ -133,6 +133,14 @@ Module positonsPanels
     'panel.Location = New Point(x, y)
 
     'End Sub
+    Public Sub locPostion(picturebox As PictureBox)
+        Dim x As Integer = 110
+        Dim y As Integer = 36
+
+
+        picturebox.Location = New Point(x, y)
+    End Sub
+
 
 End Module
 
@@ -169,7 +177,7 @@ Module smoothScroll
 End Module
 
 
-'colors ng buttons or panels
+'colors ng buttons or panels or picture box
 Module GradientHelper
     Public Sub DrawGradientButton(sender As Object, e As PaintEventArgs, color1 As Color, color2 As Color, Optional direction As Drawing2D.LinearGradientMode = Drawing2D.LinearGradientMode.Horizontal)
         Dim btn As Button = CType(sender, Button)
@@ -181,6 +189,11 @@ Module GradientHelper
 
         TextRenderer.DrawText(e.Graphics, btn.Text, btn.Font, rect, btn.ForeColor, TextFormatFlags.HorizontalCenter Or TextFormatFlags.VerticalCenter)
     End Sub
+
+    Public Sub pictureBox1Color(PictureBox As PictureBox)
+        PictureBox.BackColor = Color.FromArgb(244, 239, 234)
+    End Sub
+
 
 End Module
 
@@ -228,7 +241,7 @@ Module DropShadow
 
         Dim rect As New Rectangle(0, panel.Height - shadowHeight, panel.Width, shadowHeight)
         Using brush As New LinearGradientBrush(rect,
-           Color.FromArgb(120, 0, 0, 0),
+           Color.FromArgb(70, 0, 0, 0),
            Color.Transparent,
            LinearGradientMode.Vertical)
             graphics.FillRectangle(brush, rect)
