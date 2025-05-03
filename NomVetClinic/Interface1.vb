@@ -19,15 +19,17 @@
 
     Private Sub btnBookNow_MouseEnter(sender As Object, e As EventArgs) Handles btnBookNow1.MouseEnter
         isMouseOver = True
-        btnBookNow1.Invalidate() ' Force the button to repaint
+        btnBookNow1.Invalidate() '
     End Sub
 
     Private Sub btnBookNow_MouseLeave(sender As Object, e As EventArgs) Handles btnBookNow1.MouseLeave
         isMouseOver = False
-        btnBookNow1.Invalidate() ' Force the button to repaint
+        btnBookNow1.Invalidate()
     End Sub
 
     Private Sub btnBookNow1_Click(sender As Object, e As EventArgs) Handles btnBookNow1.Click
 
+        booking.Show()
+        Form1.Hide()
     End Sub
 End Class

@@ -31,7 +31,7 @@ Partial Class Form1
         Me.btnhmm = New System.Windows.Forms.Button()
         Me.btnServices = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnSignIn = New System.Windows.Forms.Button()
+        Me.btnBooknow = New System.Windows.Forms.Button()
         Me.btnAboutUs = New System.Windows.Forms.Button()
         Me.btnHome = New System.Windows.Forms.Button()
         Me.pnlAbovebuttons = New System.Windows.Forms.Panel()
@@ -79,7 +79,7 @@ Partial Class Form1
         Me.pnlButtons.Controls.Add(Me.btnhmm)
         Me.pnlButtons.Controls.Add(Me.btnServices)
         Me.pnlButtons.Controls.Add(Me.PictureBox1)
-        Me.pnlButtons.Controls.Add(Me.btnSignIn)
+        Me.pnlButtons.Controls.Add(Me.btnBooknow)
         Me.pnlButtons.Controls.Add(Me.btnAboutUs)
         Me.pnlButtons.Controls.Add(Me.btnHome)
         Me.pnlButtons.Dock = System.Windows.Forms.DockStyle.Top
@@ -122,17 +122,17 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
-        'btnSignIn
+        'btnBooknow
         '
-        Me.btnSignIn.FlatAppearance.BorderSize = 0
-        Me.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSignIn.Font = New System.Drawing.Font("Glacial Indifference", 10.8!, System.Drawing.FontStyle.Bold)
-        Me.btnSignIn.Location = New System.Drawing.Point(1725, 18)
-        Me.btnSignIn.Name = "btnSignIn"
-        Me.btnSignIn.Size = New System.Drawing.Size(159, 57)
-        Me.btnSignIn.TabIndex = 0
-        Me.btnSignIn.Text = "BOOK NOW"
-        Me.btnSignIn.UseVisualStyleBackColor = True
+        Me.btnBooknow.FlatAppearance.BorderSize = 0
+        Me.btnBooknow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBooknow.Font = New System.Drawing.Font("Glacial Indifference", 10.8!, System.Drawing.FontStyle.Bold)
+        Me.btnBooknow.Location = New System.Drawing.Point(1725, 18)
+        Me.btnBooknow.Name = "btnBooknow"
+        Me.btnBooknow.Size = New System.Drawing.Size(159, 57)
+        Me.btnBooknow.TabIndex = 0
+        Me.btnBooknow.Text = "BOOK NOW"
+        Me.btnBooknow.UseVisualStyleBackColor = True
         '
         'btnAboutUs
         '
@@ -227,7 +227,7 @@ Partial Class Form1
     Friend WithEvents btnAboutUs As Button
     Friend WithEvents btnhmm As Button
     Friend WithEvents btnServices As Button
-    Friend WithEvents btnSignIn As Button
+    Friend WithEvents btnBooknow As Button
     Friend WithEvents pnlShowInt As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnMinimize As Button

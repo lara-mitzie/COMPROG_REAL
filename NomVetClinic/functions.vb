@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports Microsoft.Web.WebView2.WinForms
 
 
 
@@ -73,6 +74,26 @@ Module UIHelpers
         btn.Region = New Region(path)
     End Sub
 
+    Public Sub MakeWebViewRounded(webView As WebView2, radius As Integer)
+        Dim path As New GraphicsPath()
+        path.AddArc(0, 0, radius, radius, 180, 90)
+        path.AddArc(webView.Width - radius, 0, radius, radius, 270, 90)
+        path.AddArc(webView.Width - radius, webView.Height - radius, radius, radius, 0, 90)
+        path.AddArc(0, webView.Height - radius, radius, radius, 90, 90)
+        path.CloseAllFigures()
+        webView.Region = New Region(path)
+    End Sub
+
+    Public Sub MakeTextBoxRounded(txt As TextBox, radius As Integer)
+        Dim path As New GraphicsPath()
+        path.AddArc(0, 0, radius, radius, 180, 90)
+        path.AddArc(txt.Width - radius, 0, radius, radius, 270, 90)
+        path.AddArc(txt.Width - radius, txt.Height - radius, radius, radius, 0, 90)
+        path.AddArc(0, txt.Height - radius, radius, radius, 90, 90)
+        path.CloseAllFigures()
+        txt.Region = New Region(path)
+    End Sub
+
     Public Sub RoundPanel(panel As Panel, radius As Integer)
         Dim path As New GraphicsPath()
         path.StartFigure()
@@ -142,6 +163,167 @@ Module positonsPanels
     End Sub
 
 
+
+    Public Sub buttonYes(button As Button)
+        Dim x As Integer = 450
+        Dim y As Integer = 498
+
+        button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub buttonNo(button As Button)
+        Dim x As Integer = 820
+        Dim y As Integer = 498
+
+        button.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub btnLoginLogin(button As Button)
+        Dim x As Integer = 930
+        Dim y As Integer = 570
+
+        button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnbackLogin(button As Button)
+        Dim x As Integer = 800
+        Dim y As Integer = 37
+
+        button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub textBoxUSername(textbox As TextBox)
+        Dim x As Integer = 970
+        Dim y As Integer = 370
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode1(textbox As TextBox)
+        Dim x As Integer = 999
+        Dim y As Integer = 468
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode2(textbox As TextBox)
+        Dim x As Integer = 1066
+        Dim y As Integer = 468
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode3(textbox As TextBox)
+        Dim x As Integer = 1134
+        Dim y As Integer = 468
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode4(textbox As TextBox)
+        Dim x As Integer = 1201
+        Dim y As Integer = 468
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode5(textbox As TextBox)
+        Dim x As Integer = 1266
+        Dim y As Integer = 468
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode6(textbox As TextBox)
+        Dim x As Integer = 1334
+        Dim y As Integer = 468
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub webView(webView As WebView2)
+        Dim x As Integer = 780
+        Dim y As Integer = 190
+
+        webView.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnBackLocation(button As Button)
+        Dim x As Integer = 46
+        Dim y As Integer = 23
+
+        button.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub txtFullNameON(textbox As TextBox)
+        Dim x As Integer = 210
+        Dim y As Integer = 318
+
+        textbox.Location = New Point(x, y)
+    End Sub
+    Public Sub txtEAddressOn(textbox As TextBox)
+        Dim x As Integer = 210
+        Dim y As Integer = 415
+
+        textbox.Location = New Point(x, y)
+    End Sub
+    Public Sub txtAddressOn(textbox As TextBox)
+        Dim x As Integer = 210
+        Dim y As Integer = 513
+
+        textbox.Location = New Point(x, y)
+    End Sub
+    Public Sub txtCNumberON(textbox As TextBox)
+        Dim x As Integer = 210
+        Dim y As Integer = 608
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub btnNextON(button As Button)
+        Dim x As Integer = 122
+        Dim y As Integer = 690
+
+        button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub buttonBackON(button As Button)
+        Dim x As Integer = 578
+        Dim y As Integer = 33
+
+        button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub txtPetNamePI(textbox As TextBox)
+        Dim x As Integer = 150
+        Dim y As Integer = 163
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub dtpBirthdayPI(dtp As DateTimePicker)
+        Dim x As Integer = 150
+        Dim y As Integer = 235
+
+        dtp.Location = New Point(x, y)
+    End Sub
+
+    Public Sub txtAgePI(textbox As TextBox)
+        Dim x As Integer = 150
+        Dim y As Integer = 310
+
+        textbox.Location = New Point(x, y)
+    End Sub
+    Public Sub txtWeightPI(textbox As TextBox)
+        Dim x As Integer = 500
+        Dim y As Integer = 310
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
 End Module
 
 
@@ -195,14 +377,21 @@ Module GradientHelper
     End Sub
 
 
+
+
+
 End Module
 
 
-'syempre font color nakalgay na eh
-Module fontcolor
+'syempre background color nakalgay na eh
+Module backgroundcolor
 
     Public Sub buttonTextColor(button As Button)
         button.ForeColor = Color.FromArgb(52, 52, 52)
+    End Sub
+
+    Public Sub yesorno(button As Button)
+        button.BackColor = Color.FromArgb(159, 214, 118)
     End Sub
 
 End Module
@@ -254,3 +443,17 @@ Module DropShadow
     End Sub
 
 End Module
+
+
+Module Helpers
+    Public Sub CenterPictureBoxHorizontally(pic As PictureBox, container As Panel)
+        If pic Is Nothing Then Exit Sub
+
+        ' Only center on X-axis
+        pic.Location = New Point(
+            (container.Width - pic.Width) \ 2,
+            pic.Location.Y ' Keep original Y position
+        )
+    End Sub
+End Module
+

@@ -14,6 +14,8 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +50,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.3179.45, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3179.45\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.3179.45, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3179.45\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.3179.45, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3179.45\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -76,6 +91,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bkYesOrNo.Designer.vb">
+      <DependentUpon>bkYesOrNo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bkYesOrNo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="booking.Designer.vb">
+      <DependentUpon>booking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +111,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="functions.vb" />
+    <Compile Include="Int1v2.Designer.vb">
+      <DependentUpon>Int1v2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Int1v2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Interface1.Designer.vb">
       <DependentUpon>Interface1.vb</DependentUpon>
     </Compile>
@@ -108,6 +141,18 @@
     <Compile Include="Interface4.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Location.Designer.vb">
+      <DependentUpon>Location.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Location.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -123,10 +168,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Ownerinformation.Designer.vb">
+      <DependentUpon>Ownerinformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ownerinformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="petInfo.Designer.vb">
+      <DependentUpon>petInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="petInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemporaryData.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="bkYesOrNo.resx">
+      <DependentUpon>bkYesOrNo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="booking.resx">
+      <DependentUpon>booking.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Int1v2.resx">
+      <DependentUpon>Int1v2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface1.resx">
       <DependentUpon>Interface1.vb</DependentUpon>
@@ -140,11 +207,23 @@
     <EmbeddedResource Include="Interface4.resx">
       <DependentUpon>Interface4.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Location.resx">
+      <DependentUpon>Location.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ownerinformation.resx">
+      <DependentUpon>Ownerinformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="petInfo.resx">
+      <DependentUpon>petInfo.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +237,14 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
 </Project>

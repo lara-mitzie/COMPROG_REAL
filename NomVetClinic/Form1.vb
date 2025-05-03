@@ -9,14 +9,15 @@ Class Form1
 
     Private WithEvents scrollTimer As New Timer With {.Interval = 10}
 
-    'FONT COLOR FOR BUTTONS
+    'BACKGROUND COLOR
     Private Sub buttonAndTextColor(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        fontcolor.buttonTextColor(btnHome)
-        fontcolor.buttonTextColor(btnServices)
-        fontcolor.buttonTextColor(btnhmm)
-        fontcolor.buttonTextColor(btnAboutUs)
-        fontcolor.buttonTextColor(btnSignIn)
+
+        backgroundcolor.buttonTextColor(btnHome)
+        backgroundcolor.buttonTextColor(btnServices)
+        backgroundcolor.buttonTextColor(btnhmm)
+        backgroundcolor.buttonTextColor(btnAboutUs)
+        backgroundcolor.buttonTextColor(btnBooknow)
     End Sub
 
 
@@ -84,7 +85,7 @@ Class Form1
         MakeButtonRounded(btnServices, 48)
         MakeButtonRounded(btnhmm, 48)
         MakeButtonRounded(btnAboutUs, 48)
-        MakeButtonRounded(btnSignIn, 48)
+        MakeButtonRounded(btnBooknow, 48)
 
 
     End Sub
@@ -127,6 +128,9 @@ Class Form1
     End Sub
 
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnMinimize.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
     Private Sub vScrollBar_Scroll(sender As Object, e As ScrollEventArgs) Handles VScrollBar.Scroll
         For Each ctrl As Control In pnlBack.Controls
             ctrl.Top = CInt(ctrl.Tag) - VScrollBar.Value
@@ -171,7 +175,12 @@ Class Form1
         DropShadow.pnlButtonsShadow(graphic.Graphics, pnlButtons)
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnMinimize.Click
-        Me.WindowState = FormWindowState.Minimized
+
+    Private Sub btnSignIn_Click(sender As Object, e As EventArgs) Handles btnBooknow.Click
+        booking.Show()
+        Me.Hide()
     End Sub
+
+
+
 End Class
