@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class petInfo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class petInfo
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(petInfo))
@@ -37,11 +37,13 @@ Partial Class petInfo
         Me.btnFeline = New System.Windows.Forms.Button()
         Me.btnCanine = New System.Windows.Forms.Button()
         Me.btnReptile = New System.Windows.Forms.Button()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.txtBreed = New System.Windows.Forms.TextBox()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.dtpBirthday = New System.Windows.Forms.DateTimePicker()
+        Me.cbVetStat = New System.Windows.Forms.ComboBox()
+        Me.txtGetDate = New System.Windows.Forms.TextBox()
+        Me.txtgetVac = New System.Windows.Forms.TextBox()
         Me.pnlAbovebuttons3.SuspendLayout()
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -113,6 +115,7 @@ Partial Class petInfo
         Me.txtAge.Font = New System.Drawing.Font("Glacial Indifference", 22.8!, System.Drawing.FontStyle.Bold)
         Me.txtAge.Location = New System.Drawing.Point(184, 351)
         Me.txtAge.Name = "txtAge"
+        Me.txtAge.ReadOnly = True
         Me.txtAge.Size = New System.Drawing.Size(262, 46)
         Me.txtAge.TabIndex = 8
         Me.txtAge.Text = "age"
@@ -132,9 +135,9 @@ Partial Class petInfo
         Me.btnMale.FlatAppearance.BorderSize = 0
         Me.btnMale.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMale.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.btnMale.Location = New System.Drawing.Point(163, 466)
+        Me.btnMale.Location = New System.Drawing.Point(123, 466)
         Me.btnMale.Name = "btnMale"
-        Me.btnMale.Size = New System.Drawing.Size(290, 52)
+        Me.btnMale.Size = New System.Drawing.Size(330, 52)
         Me.btnMale.TabIndex = 10
         Me.btnMale.Text = "MALE"
         Me.btnMale.UseVisualStyleBackColor = True
@@ -146,7 +149,7 @@ Partial Class petInfo
         Me.btnFemale.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
         Me.btnFemale.Location = New System.Drawing.Point(523, 466)
         Me.btnFemale.Name = "btnFemale"
-        Me.btnFemale.Size = New System.Drawing.Size(293, 52)
+        Me.btnFemale.Size = New System.Drawing.Size(330, 52)
         Me.btnFemale.TabIndex = 11
         Me.btnFemale.Text = "FEMALE"
         Me.btnFemale.UseVisualStyleBackColor = True
@@ -156,9 +159,9 @@ Partial Class petInfo
         Me.btnFeline.FlatAppearance.BorderSize = 0
         Me.btnFeline.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFeline.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.btnFeline.Location = New System.Drawing.Point(163, 585)
+        Me.btnFeline.Location = New System.Drawing.Point(122, 585)
         Me.btnFeline.Name = "btnFeline"
-        Me.btnFeline.Size = New System.Drawing.Size(168, 52)
+        Me.btnFeline.Size = New System.Drawing.Size(195, 52)
         Me.btnFeline.TabIndex = 12
         Me.btnFeline.Text = "FELINE"
         Me.btnFeline.UseVisualStyleBackColor = True
@@ -168,9 +171,9 @@ Partial Class petInfo
         Me.btnCanine.FlatAppearance.BorderSize = 0
         Me.btnCanine.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCanine.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.btnCanine.Location = New System.Drawing.Point(402, 585)
+        Me.btnCanine.Location = New System.Drawing.Point(361, 585)
         Me.btnCanine.Name = "btnCanine"
-        Me.btnCanine.Size = New System.Drawing.Size(168, 52)
+        Me.btnCanine.Size = New System.Drawing.Size(195, 52)
         Me.btnCanine.TabIndex = 13
         Me.btnCanine.Text = "CANINE"
         Me.btnCanine.UseVisualStyleBackColor = True
@@ -180,75 +183,100 @@ Partial Class petInfo
         Me.btnReptile.FlatAppearance.BorderSize = 0
         Me.btnReptile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReptile.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.btnReptile.Location = New System.Drawing.Point(644, 585)
+        Me.btnReptile.Location = New System.Drawing.Point(603, 585)
         Me.btnReptile.Name = "btnReptile"
-        Me.btnReptile.Size = New System.Drawing.Size(168, 52)
+        Me.btnReptile.Size = New System.Drawing.Size(195, 52)
         Me.btnReptile.TabIndex = 14
         Me.btnReptile.Text = "REPTILE"
         Me.btnReptile.UseVisualStyleBackColor = True
         '
-        'TextBox5
+        'txtBreed
         '
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Glacial Indifference", 22.8!, System.Drawing.FontStyle.Bold)
-        Me.TextBox5.Location = New System.Drawing.Point(184, 679)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(594, 46)
-        Me.TextBox5.TabIndex = 15
-        Me.TextBox5.Text = "bree"
+        Me.txtBreed.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtBreed.Font = New System.Drawing.Font("Glacial Indifference", 22.8!, System.Drawing.FontStyle.Bold)
+        Me.txtBreed.Location = New System.Drawing.Point(169, 768)
+        Me.txtBreed.Name = "txtBreed"
+        Me.txtBreed.Size = New System.Drawing.Size(615, 46)
+        Me.txtBreed.TabIndex = 15
+        Me.txtBreed.Text = "bree"
         '
-        'TextBox6
+        'btnNext
         '
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Font = New System.Drawing.Font("Glacial Indifference", 22.8!, System.Drawing.FontStyle.Bold)
-        Me.TextBox6.Location = New System.Drawing.Point(184, 764)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(594, 46)
-        Me.TextBox6.TabIndex = 16
-        Me.TextBox6.Text = "vac"
+        Me.btnNext.FlatAppearance.BorderSize = 0
+        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNext.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.ForeColor = System.Drawing.Color.White
+        Me.btnNext.Location = New System.Drawing.Point(153, 871)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(678, 62)
+        Me.btnNext.TabIndex = 17
+        Me.btnNext.Text = "NEXT"
+        Me.btnNext.UseVisualStyleBackColor = True
         '
-        'Button6
+        'btnBack
         '
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(153, 871)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(678, 62)
-        Me.Button6.TabIndex = 17
-        Me.Button6.Text = "NEXT"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.White
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.Location = New System.Drawing.Point(668, 16)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(65, 53)
-        Me.Button7.TabIndex = 18
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.btnBack.BackColor = System.Drawing.Color.White
+        Me.btnBack.FlatAppearance.BorderSize = 0
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Image = CType(resources.GetObject("btnBack.Image"), System.Drawing.Image)
+        Me.btnBack.Location = New System.Drawing.Point(668, 16)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(65, 53)
+        Me.btnBack.TabIndex = 18
+        Me.btnBack.UseVisualStyleBackColor = False
         '
         'dtpBirthday
         '
-        Me.dtpBirthday.Font = New System.Drawing.Font("Glacial Indifference", 20.8!, System.Drawing.FontStyle.Bold)
+        Me.dtpBirthday.Font = New System.Drawing.Font("Glacial Indifference", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpBirthday.Location = New System.Drawing.Point(184, 267)
         Me.dtpBirthday.Name = "dtpBirthday"
-        Me.dtpBirthday.Size = New System.Drawing.Size(632, 49)
+        Me.dtpBirthday.Size = New System.Drawing.Size(669, 47)
         Me.dtpBirthday.TabIndex = 19
+        '
+        'cbVetStat
+        '
+        Me.cbVetStat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbVetStat.Font = New System.Drawing.Font("Glacial Indifference", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbVetStat.FormattingEnabled = True
+        Me.cbVetStat.Items.AddRange(New Object() {"YES", "NO"})
+        Me.cbVetStat.Location = New System.Drawing.Point(169, 677)
+        Me.cbVetStat.Name = "cbVetStat"
+        Me.cbVetStat.Size = New System.Drawing.Size(678, 43)
+        Me.cbVetStat.TabIndex = 20
+        Me.cbVetStat.Text = "VAC"
+        '
+        'txtGetDate
+        '
+        Me.txtGetDate.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtGetDate.Font = New System.Drawing.Font("Glacial Indifference", 22.8!, System.Drawing.FontStyle.Bold)
+        Me.txtGetDate.Location = New System.Drawing.Point(169, 263)
+        Me.txtGetDate.Name = "txtGetDate"
+        Me.txtGetDate.ReadOnly = True
+        Me.txtGetDate.Size = New System.Drawing.Size(629, 46)
+        Me.txtGetDate.TabIndex = 21
+        '
+        'txtgetVac
+        '
+        Me.txtgetVac.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtgetVac.Font = New System.Drawing.Font("Glacial Indifference", 22.8!, System.Drawing.FontStyle.Bold)
+        Me.txtgetVac.Location = New System.Drawing.Point(169, 677)
+        Me.txtgetVac.Name = "txtgetVac"
+        Me.txtgetVac.ReadOnly = True
+        Me.txtgetVac.Size = New System.Drawing.Size(659, 46)
+        Me.txtgetVac.TabIndex = 22
         '
         'petInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1884, 986)
+        Me.Controls.Add(Me.txtgetVac)
+        Me.Controls.Add(Me.txtGetDate)
+        Me.Controls.Add(Me.cbVetStat)
         Me.Controls.Add(Me.dtpBirthday)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnNext)
+        Me.Controls.Add(Me.txtBreed)
         Me.Controls.Add(Me.btnReptile)
         Me.Controls.Add(Me.btnCanine)
         Me.Controls.Add(Me.btnFeline)
@@ -283,9 +311,11 @@ Partial Class petInfo
     Friend WithEvents btnFeline As Button
     Friend WithEvents btnCanine As Button
     Friend WithEvents btnReptile As Button
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
+    Friend WithEvents txtBreed As TextBox
+    Friend WithEvents btnNext As Button
+    Friend WithEvents btnBack As Button
     Friend WithEvents dtpBirthday As DateTimePicker
+    Friend WithEvents cbVetStat As ComboBox
+    Friend WithEvents txtGetDate As TextBox
+    Friend WithEvents txtgetVac As TextBox
 End Class

@@ -62,6 +62,38 @@
         txtContactNumber.Tag = "PHONE"
         txtContactNumber.Text = CStr(txtContactNumber.Tag)
 
+
+        If Not String.IsNullOrWhiteSpace(TemporaryData.OwnerName) Then
+            txtFullName.Text = TemporaryData.OwnerName
+        Else
+            txtFullName.Text = CStr(txtFullName.Tag)
+        End If
+
+        If Not String.IsNullOrWhiteSpace(TemporaryData.EmailAddress) Then
+            txtEmailAdd.Text = TemporaryData.EmailAddress
+        Else
+            txtEmailAdd.Text = CStr(txtEmailAdd.Tag)
+        End If
+
+        If Not String.IsNullOrWhiteSpace(TemporaryData.Address) Then
+            txtAddress.Text = TemporaryData.Address
+        Else
+            txtAddress.Text = CStr(txtAddress.Tag)
+        End If
+
+        If TemporaryData.ContactNumber <> 0 Then
+            txtContactNumber.Text = TemporaryData.ContactNumber.ToString()
+        Else
+            txtContactNumber.Text = CStr(txtContactNumber.Tag)
+        End If
+
+
+        For Each tb As TextBox In {txtFullName, txtEmailAdd, txtAddress, txtContactNumber}
+            tb.ForeColor = Color.FromArgb(138, 120, 120)
+        Next
+
+
+
     End Sub
 
     Private Sub pnlAboveTimer_Tick(sender As Object, e As EventArgs) Handles pnlTopTImer4.Tick
@@ -137,18 +169,29 @@
     Private Sub MouseMovePanel(sender As Object, e As MouseEventArgs) Handles pctBoxMain.MouseMove
         PanelAboveSlide.MouseMove(pnlAbovebuttons3, e, pnlTopTImer4)
     End Sub
-
     Private Sub handles_keyUSername(sender As Object, e As KeyEventArgs) Handles txtFullName.KeyDown, txtEmailAdd.KeyDown, txtAddress.KeyDown, txtContactNumber.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
+
             If sender Is txtContactNumber Then
-                btnNext.PerformClick() ' Automatically click the button
+                ' Check if any field is unchanged or empty
+                If txtFullName.Text = CStr(txtFullName.Tag) OrElse String.IsNullOrWhiteSpace(txtFullName.Text) OrElse
+               txtEmailAdd.Text = CStr(txtEmailAdd.Tag) OrElse String.IsNullOrWhiteSpace(txtEmailAdd.Text) OrElse
+               txtAddress.Text = CStr(txtAddress.Tag) OrElse String.IsNullOrWhiteSpace(txtAddress.Text) OrElse
+               txtContactNumber.Text = CStr(txtContactNumber.Tag) OrElse String.IsNullOrWhiteSpace(txtContactNumber.Text) Then
+
+                    MessageBox.Show("Please make sure all fields are filled out and updated.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                ' If all valid, trigger the click
+                btnNext.PerformClick()
             Else
                 Me.SelectNextControl(CType(sender, Control), True, True, True, True)
             End If
-
         End If
     End Sub
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
@@ -161,6 +204,10 @@
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         booking.Show()
+        TemporaryData.OwnerName = ""
+        TemporaryData.EmailAddress = ""
+        TemporaryData.Address = ""
+        TemporaryData.ContactNumber = 0
         Me.Close()
     End Sub
 

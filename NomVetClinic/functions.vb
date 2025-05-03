@@ -305,11 +305,19 @@ Module positonsPanels
     End Sub
 
     Public Sub dtpBirthdayPI(dtp As DateTimePicker)
-        Dim x As Integer = 150
-        Dim y As Integer = 235
+        Dim x As Integer = 149
+        Dim y As Integer = 237
 
         dtp.Location = New Point(x, y)
     End Sub
+
+    Public Sub txtGetDatePI(textbox As TextBox)
+        Dim x As Integer = 150
+        Dim y As Integer = 238
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
 
     Public Sub txtAgePI(textbox As TextBox)
         Dim x As Integer = 150
@@ -318,10 +326,84 @@ Module positonsPanels
         textbox.Location = New Point(x, y)
     End Sub
     Public Sub txtWeightPI(textbox As TextBox)
-        Dim x As Integer = 500
+        Dim x As Integer = 437
         Dim y As Integer = 310
 
         textbox.Location = New Point(x, y)
+    End Sub
+    Public Sub btnMalePI(button As Button)
+        Dim x As Integer = 126
+        Dim y As Integer = 411
+
+        button.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub btnFemalePI(button As Button)
+        Dim x As Integer = 420
+        Dim y As Integer = 411
+
+        button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnFelinePI(button As Button)
+        Dim x As Integer = 128
+        Dim y As Integer = 515
+
+        button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCaninePI(button As Button)
+        Dim x As Integer = 325
+        Dim y As Integer = 515
+
+        button.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub btnReptilePI(button As Button)
+        Dim x As Integer = 518
+        Dim y As Integer = 515
+
+        button.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub btnNextPI(button As Button)
+        Dim x As Integer = 150
+        Dim y As Integer = 765
+
+        button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub txtBreedPI(textbox As TextBox)
+
+
+        Dim x As Integer = 150
+        Dim y As Integer = 671
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub cbVacStatusPI(cb As ComboBox)
+        Dim x As Integer = 150
+        Dim y As Integer = 597
+
+        cb.Location = New Point(x, y)
+    End Sub
+
+    Public Sub getVacStasPI(textbox As TextBox)
+        Dim x As Integer = 150
+        Dim y As Integer = 597
+
+        textbox.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnBackPI(button As Button)
+        Dim x As Integer = 535
+        Dim y As Integer = 16
+
+        button.Location = New Point(x, y)
     End Sub
 
 End Module
