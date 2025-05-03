@@ -22,5 +22,15 @@ NomVetClinic
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:NomVetClinic.My.Resources.Resources.mata">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NomVetClinic.My.Resources.Resources.NOM_Veterinary_Clinic_Interface">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>
