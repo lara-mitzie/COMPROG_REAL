@@ -6,6 +6,7 @@
 
     Private selectedSex As String = ""
     Private selectedPetType As String = ""
+    ' Get the selected date and today's date
 
 
     Private breedsList As New Dictionary(Of String, List(Of String))
@@ -260,32 +261,27 @@
     End Sub
 
 
+
+
+
+
     Private Sub dtpBirthday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBirthday.ValueChanged
-        ' Get the selected date and today's date
+        ' Restrict the DateTimePicker to not select a future date
+        dtpBirthday.MaxDate = Date.Today
+
         Dim birthDate As Date = dtpBirthday.Value
         Dim today As Date = Date.Today
 
-        If birthDate > today Then
-            RemoveHandler dtpBirthday.ValueChanged, AddressOf dtpBirthday_ValueChanged
-            dtpBirthday.Value = today
-            AddHandler dtpBirthday.ValueChanged, AddressOf dtpBirthday_ValueChanged
-            MessageBox.Show("Birthday cannot be in the future.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtAge.Text = CStr(txtAge.Tag)
-            Return
-        End If
-
-        ' Update the label with formatted date
+        ' Valid date: update display and calculate age
         txtGetDate.Text = birthDate.ToString("MM/dd/yyyy")
 
-        ' Calculate age
         Dim age As Integer = today.Year - birthDate.Year
-        If birthDate > today.AddYears(-age) Then
-            age -= 1
-        End If
+        If birthDate > today.AddYears(-age) Then age -= 1
 
-        ' Update the age textbox
         txtAge.Text = age.ToString()
     End Sub
+
+
 
 
 

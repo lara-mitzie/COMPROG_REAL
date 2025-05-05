@@ -492,43 +492,43 @@ Module positonsPanels
 
 
     Public Sub btnCode1AC(txt As TextBox)
-        Dim x As Integer = 600
-        Dim y As Integer = 460
+        Dim x As Integer = 599
+        Dim y As Integer = 395
 
         txt.Location = New Point(x, y)
     End Sub
 
     Public Sub btnCode2AC(txt As TextBox)
-        Dim x As Integer = 650
-        Dim y As Integer = 460
+        Dim x As Integer = 696
+        Dim y As Integer = 395
 
         txt.Location = New Point(x, y)
     End Sub
 
     Public Sub btnCode3AC(txt As TextBox)
-        Dim x As Integer = 700
-        Dim y As Integer = 460
+        Dim x As Integer = 793
+        Dim y As Integer = 395
 
         txt.Location = New Point(x, y)
     End Sub
 
     Public Sub btnCode4AC(txt As TextBox)
-        Dim x As Integer = 750
-        Dim y As Integer = 460
+        Dim x As Integer = 891
+        Dim y As Integer = 395
 
         txt.Location = New Point(x, y)
     End Sub
 
     Public Sub btnCode5AC(txt As TextBox)
-        Dim x As Integer = 800
-        Dim y As Integer = 460
+        Dim x As Integer = 988
+        Dim y As Integer = 395
 
         txt.Location = New Point(x, y)
     End Sub
 
     Public Sub btnCode6AC(txt As TextBox)
-        Dim x As Integer = 850
-        Dim y As Integer = 460
+        Dim x As Integer = 1085
+        Dim y As Integer = 395
 
         txt.Location = New Point(x, y)
     End Sub
