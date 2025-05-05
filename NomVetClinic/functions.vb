@@ -74,6 +74,18 @@ Module UIHelpers
         btn.Region = New Region(path)
     End Sub
 
+
+
+    Public Sub MakePanelRounded(pnl As Panel, radius As Integer)
+        Dim path As New GraphicsPath()
+        path.AddArc(0, 0, radius, radius, 180, 90)
+        path.AddArc(pnl.Width - radius, 0, radius, radius, 270, 90)
+        path.AddArc(pnl.Width - radius, pnl.Height - radius, radius, radius, 0, 90)
+        path.AddArc(0, pnl.Height - radius, radius, radius, 90, 90)
+        path.CloseAllFigures()
+        pnl.Region = New Region(path)
+    End Sub
+
     Public Sub MakeWebViewRounded(webView As WebView2, radius As Integer)
         Dim path As New GraphicsPath()
         path.AddArc(0, 0, radius, radius, 180, 90)
@@ -94,7 +106,7 @@ Module UIHelpers
         txt.Region = New Region(path)
     End Sub
 
-    Public Sub RoundPanel(panel As Panel, radius As Integer)
+    Public Sub ApplyRoundedCorners(panel As Panel, radius As Integer)
         Dim path As New GraphicsPath()
         path.StartFigure()
         path.AddArc(New Rectangle(0, 0, radius, radius), 180, 90)
@@ -120,15 +132,7 @@ End Module
 
 'postion ng panels and buttons
 Module positonsPanels
-    ' Public Sub PosPanels(panel As Panel)
-    'Dim xPosition As Integer = 442
-    'Dim yPosition As Integer = 25
 
-
-    '  panel.Location = New Point(xPosition, yPosition)
-
-
-    ' End Sub
 
     Public Sub posProfPic(picture As PictureBox)
         Dim x As Integer = 1300
@@ -147,13 +151,6 @@ Module positonsPanels
     End Sub
 
 
-    '  Public Sub panelProfilepos(panel As Panel)
-    'Dim x As Integer = 1300
-    'Dim y As Integer = 25
-
-    'panel.Location = New Point(x, y)
-
-    'End Sub
     Public Sub locPostion(picturebox As PictureBox)
         Dim x As Integer = 110
         Dim y As Integer = 36
@@ -305,8 +302,8 @@ Module positonsPanels
     End Sub
 
     Public Sub dtpBirthdayPI(dtp As DateTimePicker)
-        Dim x As Integer = 149
-        Dim y As Integer = 237
+        Dim x As Integer = 153
+        Dim y As Integer = 239
 
         dtp.Location = New Point(x, y)
     End Sub
@@ -405,6 +402,140 @@ Module positonsPanels
 
         button.Location = New Point(x, y)
     End Sub
+
+
+    Public Sub btnAddPetCA(button As Button)
+        Dim x As Integer = 600
+        Dim y As Integer = 767
+
+        button.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub btnVAccinePS(Button As Button)
+        Dim x As Integer = 250
+        Dim y As Integer = 565
+
+        Button.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub btnCheckUPPS(Button As Button)
+        Dim x As Integer = 910
+        Dim y As Integer = 565
+
+        Button.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnNextPS(Button As Button)
+        Dim x As Integer = 845
+        Dim y As Integer = 703
+
+        Button.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub lblPRicePS(lbl As Label)
+        Dim x As Integer = 328
+        Dim y As Integer = 720
+
+        lbl.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnBackPS(btn As Button)
+        Dim x As Integer = 1320
+        Dim y As Integer = 35
+
+        btn.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnBackDateCAl(btn As Button)
+        Dim x As Integer = 170
+        Dim y As Integer = 690
+
+        btn.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnConfirmCAl(btn As Button)
+        Dim x As Integer = 395
+        Dim y As Integer = 685
+
+        btn.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnNextDateCAl(btn As Button)
+        Dim x As Integer = 630
+        Dim y As Integer = 690
+
+        btn.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub tlpCalendarCAl(tlp As TableLayoutPanel)
+        Dim x As Integer = 170
+        Dim y As Integer = 295
+
+        tlp.Location = New Point(x, y)
+    End Sub
+
+
+    Public Sub lblMonthCAL(lbl As Label)
+        Dim x As Integer = 265
+        Dim y As Integer = 140
+
+        lbl.Location = New Point(x, y)
+    End Sub
+
+
+
+    'add code form
+
+
+    Public Sub btnCode1AC(txt As TextBox)
+        Dim x As Integer = 600
+        Dim y As Integer = 460
+
+        txt.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode2AC(txt As TextBox)
+        Dim x As Integer = 650
+        Dim y As Integer = 460
+
+        txt.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode3AC(txt As TextBox)
+        Dim x As Integer = 700
+        Dim y As Integer = 460
+
+        txt.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode4AC(txt As TextBox)
+        Dim x As Integer = 750
+        Dim y As Integer = 460
+
+        txt.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode5AC(txt As TextBox)
+        Dim x As Integer = 800
+        Dim y As Integer = 460
+
+        txt.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnCode6AC(txt As TextBox)
+        Dim x As Integer = 850
+        Dim y As Integer = 460
+
+        txt.Location = New Point(x, y)
+    End Sub
+
+
+
+
 
 End Module
 

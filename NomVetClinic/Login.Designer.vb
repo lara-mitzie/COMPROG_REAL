@@ -215,7 +215,6 @@ Partial Class Login
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(476, 52)
         Me.txtUsername.TabIndex = 3
-        Me.txtUsername.Text = "d"
         '
         'timerPanel3
         '

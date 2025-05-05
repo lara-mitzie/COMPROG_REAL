@@ -37,3 +37,8 @@ C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\bin\Debug\System.Numerics.Vec
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\bin\Debug\System.Buffers.dll
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\bin\Debug\MySql.Data.xml
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.petInfo.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.customerAccount.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.petInformation.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.pickService.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Calendar.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.addCode.resources

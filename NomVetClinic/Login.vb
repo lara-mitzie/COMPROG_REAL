@@ -1,10 +1,14 @@
 ﻿'Imports System.Windows.Forms.VisualStyles
-
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports MySql.Data.MySqlClient
 
 Public Class Login
     Private isMouseOver As Boolean = False
     Private WithEvents scrollTimer As New Timer With {.Interval = 10}
+    Dim dataInfo As String = ("server=localhost;user id=root;password=rdtimbangMysql1;database=adminmain")
+    Dim conn As New MySqlConnection
+
+
+
 
     Private Sub bookingLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         AddHandler btnLogin.Paint, AddressOf btnBookNow_Paint
@@ -36,6 +40,42 @@ Public Class Login
             End If
         Next
 
+        Dim codeAll As String = txtCode1.Text & txtCode2.Text & txtCode3.Text & txtCode4.Text & txtCode5.Text & txtCode6.Text
+        Dim customerUsername As String = txtUsername.Text.Trim
+
+        Try
+            conn = New MySqlConnection(dataInfo)
+            conn.Open()
+
+            Dim loginQuery As String = "
+        SELECT oi.ownerID, oi.ownerName, oi.ownerCode
+        FROM ownerinformation oi
+        WHERE oi.ownerName = @ownerName AND oi.ownerCode = @ownerCode"
+
+            Using cmd As New MySqlCommand(loginQuery, conn)
+                cmd.Parameters.AddWithValue("@ownerName", customerUsername)
+                cmd.Parameters.AddWithValue("@ownerCode", codeAll)
+
+                Dim sqlReader As MySqlDataReader = cmd.ExecuteReader
+
+                If sqlReader.Read Then
+                    ' ✅ Store owner ID and name
+                    TemporaryData.LoggedInOwnerID = sqlReader("ownerID")
+                    TemporaryData.LoggedInOwnerName = sqlReader("ownerName").ToString()
+
+                    MessageBox.Show("Login successful!")
+                    customerAccount.Show()
+                    Me.Close()
+                Else
+                    MessageBox.Show("Invalid username or code.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+                sqlReader.Close()
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Database error: " & ex.Message)
+        End Try
 
     End Sub
 

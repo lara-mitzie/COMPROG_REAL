@@ -87,6 +87,7 @@
         Me.WindowState = FormWindowState.Maximized
         PopulateBreedsList()
         SetupBreedAutocomplete()
+        LoadFromTemporaryData()
 
         'Font Color Button
         For Each tb As Button In {btnMale, btnFemale, btnFeline, btnCanine, btnReptile}
@@ -169,7 +170,7 @@
         End If
 
         If Not String.IsNullOrWhiteSpace(TemporaryData.petBreed) Then
-            txtBreed.Text = TemporaryData.Address
+            txtBreed.Text = TemporaryData.petBreed
         Else
             txtBreed.Text = CStr(txtBreed.Tag)
         End If
@@ -197,9 +198,52 @@
 
     End Sub
 
-
-
     Private Sub nextCLcike(sender As Object, e As EventArgs) Handles btnNext.Click
+
+        If txtPetName.Text = CStr(txtPetName.Tag) OrElse String.IsNullOrWhiteSpace(txtPetName.Text) Then
+            MessageBox.Show("Pet Name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If txtBreed.Text = CStr(txtBreed.Tag) OrElse String.IsNullOrWhiteSpace(txtBreed.Text) Then
+            MessageBox.Show("Breed cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If txtAge.Text = CStr(txtAge.Tag) OrElse String.IsNullOrWhiteSpace(txtAge.Text) Then
+            MessageBox.Show("Age cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If txtWeight.Text = CStr(txtWeight.Tag) OrElse String.IsNullOrWhiteSpace(txtWeight.Text) Then
+            MessageBox.Show("Weight cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' Validate selection of sex and type
+        If String.IsNullOrEmpty(selectedSex) Then
+            MessageBox.Show("Please select the sex of the pet.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If String.IsNullOrEmpty(selectedPetType) Then
+            MessageBox.Show("Please select the pet type.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' Validate numbers using TryParse
+        Dim age As Integer
+        If Not Integer.TryParse(txtAge.Text, age) Then
+            MessageBox.Show("Age must be a valid whole number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Dim weight As Integer
+        If Not Integer.TryParse(txtWeight.Text, weight) Then
+            MessageBox.Show("Weight must be a valid whole number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
 
         TemporaryData.petName = txtPetName.Text
         TemporaryData.petSex = selectedSex
@@ -210,30 +254,39 @@
         TemporaryData.petBreed = txtBreed.Text
         TemporaryData.petvacStatus = cbVetStat.Text
 
+        pickService.Show()
+        Me.Close()
+
     End Sub
 
 
     Private Sub dtpBirthday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBirthday.ValueChanged
+        ' Get the selected date and today's date
         Dim birthDate As Date = dtpBirthday.Value
         Dim today As Date = Date.Today
 
-        Dim age As Integer = today.Year - birthDate.Year
-
         If birthDate > today Then
+            RemoveHandler dtpBirthday.ValueChanged, AddressOf dtpBirthday_ValueChanged
+            dtpBirthday.Value = today
+            AddHandler dtpBirthday.ValueChanged, AddressOf dtpBirthday_ValueChanged
             MessageBox.Show("Birthday cannot be in the future.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            txtAge.Text = ""
-            Exit Sub
-        Else
-            txtGetDate.Text = dtpBirthday.Value.ToString("MM/dd/yyyy")
+            txtAge.Text = CStr(txtAge.Tag)
+            Return
         End If
 
+        ' Update the label with formatted date
+        txtGetDate.Text = birthDate.ToString("MM/dd/yyyy")
 
+        ' Calculate age
+        Dim age As Integer = today.Year - birthDate.Year
         If birthDate > today.AddYears(-age) Then
             age -= 1
         End If
 
+        ' Update the age textbox
         txtAge.Text = age.ToString()
     End Sub
+
 
 
     Private Sub btnMale_Click(sender As Object, e As EventArgs) Handles btnMale.Click
@@ -355,26 +408,22 @@
         Me.Close()
     End Sub
 
-    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        If txtPetName.Text = CStr(txtPetName.Tag) OrElse String.IsNullOrWhiteSpace(txtPetName.Text) Then
-            MessageBox.Show("Pet Name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
 
-        If txtBreed.Text = CStr(txtBreed.Tag) OrElse String.IsNullOrWhiteSpace(txtBreed.Text) Then
-            MessageBox.Show("Breed cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
+    Private Sub LoadFromTemporaryData()
+        ' TextBoxes
+        txtPetName.Text = If(String.IsNullOrWhiteSpace(TemporaryData.petName), CStr(txtPetName.Tag), TemporaryData.petName)
+        txtAge.Text = If(TemporaryData.petAge = 0, CStr(txtAge.Tag), TemporaryData.petAge.ToString())
+        txtWeight.Text = If(TemporaryData.petWeight = 0, CStr(txtWeight.Tag), TemporaryData.petWeight.ToString())
+        txtBreed.Text = If(String.IsNullOrWhiteSpace(TemporaryData.petBreed), CStr(txtBreed.Tag), TemporaryData.petBreed)
+        cbVetStat.Text = If(String.IsNullOrWhiteSpace(TemporaryData.petvacStatus), CStr(txtgetVac.Tag), TemporaryData.petvacStatus)
+        txtgetVac.Text = cbVetStat.Text
+        txtGetDate.Text = If(String.IsNullOrWhiteSpace(TemporaryData.petBirthday), "BIRTHDAY", TemporaryData.petBirthday)
 
-        If Not txtWeight.Text.All(Function(c) Char.IsDigit(c)) Then
-            MessageBox.Show("Weight must contain only numbers.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-
-        If Not txtAge.Text.All(Function(c) Char.IsDigit(c)) Then
-            MessageBox.Show("Age must contain only numbers.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
+        ' Buttons
+        selectedSex = TemporaryData.petSex
+        selectedPetType = TemporaryData.petType
+        highlightGender()
+        highlightType()
     End Sub
 
 

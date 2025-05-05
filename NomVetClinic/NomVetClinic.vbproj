@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5F32C502-0148-4594-9048-481EB0BAA260}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>NomVetClinic.My.MyApplication</StartupObject>
+    <StartupObject>NomVetClinic.Form1</StartupObject>
     <RootNamespace>NomVetClinic</RootNamespace>
     <AssemblyName>NomVetClinic</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -48,6 +48,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.3179.45, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
@@ -91,6 +94,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addCode.Designer.vb">
+      <DependentUpon>addCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="bkYesOrNo.Designer.vb">
       <DependentUpon>bkYesOrNo.vb</DependentUpon>
     </Compile>
@@ -101,6 +110,18 @@
       <DependentUpon>booking.vb</DependentUpon>
     </Compile>
     <Compile Include="booking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar.Designer.vb">
+      <DependentUpon>Calendar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerAccount.Designer.vb">
+      <DependentUpon>customerAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="customerAccount.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -154,10 +175,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,14 +197,35 @@
     <Compile Include="petInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PetInformation.Designer.vb">
+      <DependentUpon>PetInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PetInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pickService.Designer.vb">
+      <DependentUpon>pickService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pickService.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TemporaryData.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addCode.resx">
+      <DependentUpon>addCode.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bkYesOrNo.resx">
       <DependentUpon>bkYesOrNo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="booking.resx">
       <DependentUpon>booking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.resx">
+      <DependentUpon>Calendar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerAccount.resx">
+      <DependentUpon>customerAccount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -225,11 +263,17 @@
     <EmbeddedResource Include="petInfo.resx">
       <DependentUpon>petInfo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PetInformation.resx">
+      <DependentUpon>PetInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pickService.resx">
+      <DependentUpon>pickService.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -238,6 +282,15 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Canine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reptile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets')" />

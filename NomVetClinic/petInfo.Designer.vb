@@ -227,10 +227,11 @@ Partial Class petInfo
         '
         'dtpBirthday
         '
-        Me.dtpBirthday.Font = New System.Drawing.Font("Glacial Indifference", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpBirthday.CalendarTitleBackColor = System.Drawing.Color.Beige
+        Me.dtpBirthday.Font = New System.Drawing.Font("Glacial Indifference", 17.8!, System.Drawing.FontStyle.Bold)
         Me.dtpBirthday.Location = New System.Drawing.Point(184, 267)
         Me.dtpBirthday.Name = "dtpBirthday"
-        Me.dtpBirthday.Size = New System.Drawing.Size(669, 47)
+        Me.dtpBirthday.Size = New System.Drawing.Size(669, 43)
         Me.dtpBirthday.TabIndex = 19
         '
         'cbVetStat
@@ -252,7 +253,7 @@ Partial Class petInfo
         Me.txtGetDate.Location = New System.Drawing.Point(169, 263)
         Me.txtGetDate.Name = "txtGetDate"
         Me.txtGetDate.ReadOnly = True
-        Me.txtGetDate.Size = New System.Drawing.Size(629, 46)
+        Me.txtGetDate.Size = New System.Drawing.Size(658, 46)
         Me.txtGetDate.TabIndex = 21
         '
         'txtgetVac
