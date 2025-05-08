@@ -30,10 +30,11 @@ Partial Class customerAccount
         Me.btnMinimize = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.pnlTimer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.lblClientName = New System.Windows.Forms.Label()
         Me.pctMain = New System.Windows.Forms.PictureBox()
+        Me.pctBlur = New System.Windows.Forms.PictureBox()
         Me.pnlAbovebuttons2.SuspendLayout()
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlPetList
@@ -94,17 +95,6 @@ Partial Class customerAccount
         'pnlTimer2
         '
         '
-        'lblClientName
-        '
-        Me.lblClientName.AutoSize = True
-        Me.lblClientName.BackColor = System.Drawing.Color.White
-        Me.lblClientName.Font = New System.Drawing.Font("Glacial Indifference", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblClientName.Location = New System.Drawing.Point(855, 9)
-        Me.lblClientName.Name = "lblClientName"
-        Me.lblClientName.Size = New System.Drawing.Size(185, 72)
-        Me.lblClientName.TabIndex = 5
-        Me.lblClientName.Text = "Label1"
-        '
         'pctMain
         '
         Me.pctMain.Dock = System.Windows.Forms.DockStyle.Fill
@@ -116,24 +106,36 @@ Partial Class customerAccount
         Me.pctMain.TabIndex = 0
         Me.pctMain.TabStop = False
         '
+        'pctBlur
+        '
+        Me.pctBlur.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pctBlur.Image = CType(resources.GetObject("pctBlur.Image"), System.Drawing.Image)
+        Me.pctBlur.Location = New System.Drawing.Point(0, 0)
+        Me.pctBlur.Name = "pctBlur"
+        Me.pctBlur.Size = New System.Drawing.Size(1884, 986)
+        Me.pctBlur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pctBlur.TabIndex = 5
+        Me.pctBlur.TabStop = False
+        Me.pctBlur.Visible = False
+        '
         'customerAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1884, 986)
         Me.Controls.Add(Me.btnAddPet)
-        Me.Controls.Add(Me.lblClientName)
         Me.Controls.Add(Me.pnlAbovebuttons2)
         Me.Controls.Add(Me.pnlPetList)
         Me.Controls.Add(Me.pctMain)
+        Me.Controls.Add(Me.pctBlur)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "customerAccount"
         Me.Text = "customerAccount"
         Me.pnlAbovebuttons2.ResumeLayout(False)
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents pnlPetList As Panel
@@ -141,7 +143,7 @@ Partial Class customerAccount
     Friend WithEvents btnMinimize As Button
     Friend WithEvents btnExit As Button
     Friend WithEvents pnlTimer2 As Timer
-    Friend WithEvents lblClientName As Label
     Friend WithEvents btnAddPet As Button
     Friend WithEvents pctMain As PictureBox
+    Friend WithEvents pctBlur As PictureBox
 End Class

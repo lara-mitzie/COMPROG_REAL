@@ -33,50 +33,83 @@
 
     Private Sub SetServiceAndPrice(serviceType As String, selectedButton As Button)
         Dim petType As String = TemporaryData.petType
-        Dim calculatedPrice As Integer = 0
+        Dim priceToAdd As Integer = 0
 
-        ' Determine price
+        ' Determine the price for the selected service
         Select Case serviceType
             Case "CHECK-UP"
                 Select Case petType
-                    Case "Feline"
-                        calculatedPrice = 500
-                    Case "Canine"
-                        calculatedPrice = 400
-                    Case "Reptile"
-                        calculatedPrice = 600
+                    Case "Feline" : priceToAdd = 500
+                    Case "Canine" : priceToAdd = 400
+                    Case "Reptile" : priceToAdd = 600
                 End Select
-
             Case "VACCINATION"
                 Select Case petType
-                    Case "Feline"
-                        calculatedPrice = 1000
-                    Case "Canine"
-                        calculatedPrice = 1500
-                    Case "Reptile"
-                        calculatedPrice = 2000
+                    Case "Feline" : priceToAdd = 1000
+                    Case "Canine" : priceToAdd = 1500
+                    Case "Reptile" : priceToAdd = 2000
                 End Select
         End Select
 
-        ' Save to TemporaryData
-        price = calculatedPrice
+        ' Get the current services as a list for easier manipulation
+        Dim currentServices As New List(Of String)
+        If Not String.IsNullOrEmpty(TemporaryData.ServiceType) Then
+            currentServices.AddRange(TemporaryData.ServiceType.Split(","c))
+        End If
 
-        ' Update label
-        lblPrice.Text = "₱ " & price.ToString()
+        ' Track if the service was selected or deselected
+        Dim wasSelected As Boolean = currentServices.Contains(serviceType)
 
-        ' Update button colors
-        btnVaccine.BackColor = Color.FromArgb(251, 237, 206)
-        btnCheckUp.BackColor = Color.FromArgb(251, 237, 206)
-        selectedButton.BackColor = Color.FromArgb(216, 199, 161)
+        ' Recalculate the entire price from scratch to avoid cumulative errors
+        If wasSelected Then
+            ' Remove the service if it was already selected
+            currentServices.Remove(serviceType)
+            selectedButton.BackColor = Color.FromArgb(251, 237, 206) ' Deselected color
+        Else
+            ' Add the service if it wasn't selected
+            currentServices.Add(serviceType)
+            selectedButton.BackColor = Color.FromArgb(216, 199, 161) ' Selected color
+        End If
+
+        ' Update the service list in TemporaryData
+        TemporaryData.ServiceType = String.Join(",", currentServices)
+
+        ' Recalculate the total price from scratch
+        Dim totalPrice As Integer = 0
+        For Each service As String In currentServices
+            Select Case service
+                Case "CHECK-UP"
+                    Select Case petType
+                        Case "Feline" : totalPrice += 500
+                        Case "Canine" : totalPrice += 400
+                        Case "Reptile" : totalPrice += 600
+                    End Select
+                Case "VACCINATION"
+                    Select Case petType
+                        Case "Feline" : totalPrice += 1000
+                        Case "Canine" : totalPrice += 1500
+                        Case "Reptile" : totalPrice += 2000
+                    End Select
+            End Select
+        Next
+
+        ' Update the price in TemporaryData
+        TemporaryData.ServicePrice = totalPrice
+
+        ' Update price label
+        lblPrice.Text = "₱ " & TemporaryData.ServicePrice.ToString()
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        TemporaryData.ServiceType = ServiceType
-        TemporaryData.ServicePrice = price
+
+        If String.IsNullOrEmpty(TemporaryData.ServiceType) Then
+            MessageBox.Show("Please select a service (Check-Up or Vaccination) before proceeding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
 
         Calendar.Show()
-        Me.Close()
-
+        Me.Hide()
     End Sub
 
 

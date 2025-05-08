@@ -2,11 +2,19 @@
 
 Public Class petInformation
     Public Property PetID As Integer
-
+    Private WithEvents scrollTimer As New Timer With {.Interval = 10}
     Private Sub petInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Log the pet ID for debugging
         Console.WriteLine("Loading pet information for Pet ID: " & PetID)
         LoadPetData(PetID)
+
+        PanelAboveSlide.InitializePanel(pnlAbovebuttons2, TimerPanel2)
+        For Each tb As Label In {lblPetName, lblPetType, lblPetAge, lblPetBirthday, lblPetSex, lblPetWeight, lblpetVacStatus, lblPEtBreed}
+            tb.BackColor = Color.FromArgb(237, 232, 225)
+            tb.ForeColor = Color.FromArgb(173, 159, 155)
+        Next
+        MakeFormRounded(Me, 55)
+
     End Sub
 
     ' Method to load pet data with proper error handling
@@ -22,8 +30,7 @@ Public Class petInformation
                 ' First query: Get basic pet information (ALWAYS REQUIRED)
                 LoadBasicPetInfo(conn)
 
-                ' Second query: Get latest booking info (IF AVAILABLE)
-                LoadLatestBookingInfo(conn)
+
             End Using
         Catch ex As Exception
             MessageBox.Show("Error loading pet information: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -81,58 +88,30 @@ Public Class petInformation
         End Try
     End Sub
 
-    ' Load the latest booking information (if available)
-    Private Sub LoadLatestBookingInfo(conn As MySqlConnection)
-        Try
-            ' Query to get the most recent booking and its service
-            Dim query As String = "
-            SELECT 
-                b.bookingDate,
-                s.serviceName
-            FROM 
-                bookingtable b
-            LEFT JOIN 
-                services s ON b.serviceID = s.servicesId
-            WHERE 
-                b.petID = @petID
-            ORDER BY 
-                b.bookingDate DESC
-            LIMIT 1"
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
+    End Sub
 
-            Using cmd As New MySqlCommand(query, conn)
-                cmd.Parameters.Add("@petID", MySqlDbType.Int32).Value = PetID
 
-                Using reader As MySqlDataReader = cmd.ExecuteReader()
-                    If reader.Read() Then
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnMinimize.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub pnlAboveTimer_Tick(sender As Object, e As EventArgs) Handles TimerPanel2.Tick
+        PanelAboveSlide.SlidePanel(pnlAbovebuttons2, TimerPanel2)
+    End Sub
 
 
 
-                        ' Pet has booking data
-                        lblDateofVIsit.Text = Convert.ToDateTime(reader("bookingDate")).ToString("MMMM dd, yyyy")
-
-                        If Not IsDBNull(reader("serviceName")) Then
-                            lblService.Text = reader("serviceName").ToString()
-                        Else
-                            lblService.Text = "No service specified"
-                        End If
-                    Else
+    'pnl Button Mouse enter
+    Private Sub pctHomePage_MouseEnter(sender As Object, e As EventArgs) Handles pctMain.MouseEnter
+        PanelAboveSlide.MouseEnter(pnlAbovebuttons2, TimerPanel2)
+    End Sub
 
 
-
-                        ' No booking data found - set default values
-                        lblDateofVIsit.Text = "No visits recorded"
-                        lblService.Text = "N/A"
-                    End If
-                End Using
-            End Using
-        Catch ex As Exception
-            ' Just log the error but don't stop the form from showing
-            Console.WriteLine("Error loading booking info: " & ex.Message)
-
-            ' Set default values
-            lblDateofVIsit.Text = "No visits recorded"
-            lblService.Text = "Error loading service data"
-        End Try
+    'pnl Button Mouse Move
+    Private Sub MouseMovePanel(sender As Object, e As MouseEventArgs) Handles pctMain.MouseMove
+        PanelAboveSlide.MouseMove(pnlAbovebuttons2, e, TimerPanel2)
     End Sub
 
 

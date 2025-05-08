@@ -54,9 +54,6 @@
         txtBreed.AutoCompleteCustomSource = New AutoCompleteStringCollection()
     End Sub
 
-    ' Modify your existing pet type button click methods to update the breed suggestions
-
-
 
     ' Update this method to not reset the breed textbox when updating suggestions
     Private Sub UpdateBreedAutocompleteSource()
@@ -77,7 +74,6 @@
             txtBreed.Text = ""
         End If
     End Sub
-
 
 
 
@@ -195,9 +191,10 @@
             tb.BackColor = Color.FromArgb(239, 232, 224)
         Next
 
-
-
     End Sub
+
+
+
 
     Private Sub nextCLcike(sender As Object, e As EventArgs) Handles btnNext.Click
 
@@ -205,11 +202,22 @@
             MessageBox.Show("Pet Name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
+        Dim enteredBreed As String = txtBreed.Text.Trim()
 
-        If txtBreed.Text = CStr(txtBreed.Tag) OrElse String.IsNullOrWhiteSpace(txtBreed.Text) Then
+        If enteredBreed = CStr(txtBreed.Tag) OrElse String.IsNullOrWhiteSpace(enteredBreed) Then
             MessageBox.Show("Breed cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
+
+        ' Check if breed exists in the predefined list or is "Other"
+        If breedsList.ContainsKey(selectedPetType) Then
+            Dim validBreeds = breedsList(selectedPetType)
+            If Not validBreeds.Contains(enteredBreed, StringComparer.OrdinalIgnoreCase) AndAlso Not enteredBreed.Equals("Other", StringComparison.OrdinalIgnoreCase) Then
+                MessageBox.Show("Please enter a valid breed or type 'Other'.", "Invalid Breed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+        End If
+
 
         If txtAge.Text = CStr(txtAge.Tag) OrElse String.IsNullOrWhiteSpace(txtAge.Text) Then
             MessageBox.Show("Age cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -221,7 +229,7 @@
             Return
         End If
 
-        ' Validate selection of sex and type
+
         If String.IsNullOrEmpty(selectedSex) Then
             MessageBox.Show("Please select the sex of the pet.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -232,7 +240,7 @@
             Return
         End If
 
-        ' Validate numbers using TryParse
+
         Dim age As Integer
         If Not Integer.TryParse(txtAge.Text, age) Then
             MessageBox.Show("Age must be a valid whole number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -285,6 +293,24 @@
 
 
 
+
+
+
+    Private Sub keyPressTxt(sender As Object, e As KeyPressEventArgs) Handles txtPetName.KeyPress, txtBreed.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtWeight.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+
     Private Sub btnMale_Click(sender As Object, e As EventArgs) Handles btnMale.Click
         selectedSex = "Male"
         highlightGender()
@@ -299,19 +325,19 @@
     Private Sub btnCaline_Click(sender As Object, e As EventArgs) Handles btnCanine.Click
         selectedPetType = "Canine"
         highlightType()
-        UpdateBreedAutocompleteSource() ' Add this line
+        UpdateBreedAutocompleteSource()
     End Sub
 
     Private Sub btnFeline_Click(sender As Object, e As EventArgs) Handles btnFeline.Click
         selectedPetType = "Feline"
         highlightType()
-        UpdateBreedAutocompleteSource() ' Add this line
+        UpdateBreedAutocompleteSource()
     End Sub
 
     Private Sub btnReptile_Click(sender As Object, e As EventArgs) Handles btnReptile.Click
         selectedPetType = "Reptile"
         highlightType()
-        UpdateBreedAutocompleteSource() ' Add this line
+        UpdateBreedAutocompleteSource()
     End Sub
 
     Private Sub highlightGender()
@@ -340,7 +366,7 @@
             tb.Text = ""
             tb.ForeColor = Color.FromArgb(138, 120, 120)
 
-            ' If this is the breed textbox and a pet type is selected, update the autocomplete
+
             If tb Is txtBreed AndAlso Not String.IsNullOrEmpty(selectedPetType) Then
                 UpdateBreedAutocompleteSource()
             End If
@@ -353,7 +379,18 @@
             tb.Text = CStr(tb.Tag)
             tb.ForeColor = Color.FromArgb(138, 120, 120)
         End If
+
+
     End Sub
+
+
+
+
+
+
+
+
+
 
 
     Private Sub btnBookNow_Paint(sender As Object, e As PaintEventArgs)
@@ -406,20 +443,43 @@
 
 
     Private Sub LoadFromTemporaryData()
-        ' TextBoxes
-        txtPetName.Text = If(String.IsNullOrWhiteSpace(TemporaryData.petName), CStr(txtPetName.Tag), TemporaryData.petName)
-        txtAge.Text = If(TemporaryData.petAge = 0, CStr(txtAge.Tag), TemporaryData.petAge.ToString())
-        txtWeight.Text = If(TemporaryData.petWeight = 0, CStr(txtWeight.Tag), TemporaryData.petWeight.ToString())
-        txtBreed.Text = If(String.IsNullOrWhiteSpace(TemporaryData.petBreed), CStr(txtBreed.Tag), TemporaryData.petBreed)
-        cbVetStat.Text = If(String.IsNullOrWhiteSpace(TemporaryData.petvacStatus), CStr(txtgetVac.Tag), TemporaryData.petvacStatus)
-        txtgetVac.Text = cbVetStat.Text
-        txtGetDate.Text = If(String.IsNullOrWhiteSpace(TemporaryData.petBirthday), "BIRTHDAY", TemporaryData.petBirthday)
+        ' Birthday
+        If TemporaryData.petBirthday <> Nothing AndAlso IsDate(TemporaryData.petBirthday) Then
+            dtpBirthday.Value = Date.Parse(TemporaryData.petBirthday)
+            txtGetDate.Text = dtpBirthday.Value.ToString("MM/dd/yyyy")
+            Dim today As Date = Date.Today
+            Dim birthDate As Date = dtpBirthday.Value
+            Dim age As Integer = today.Year - birthDate.Year
+            If birthDate > today.AddYears(-age) Then age -= 1
+            txtAge.Text = age.ToString()
+        End If
 
-        ' Buttons
-        selectedSex = TemporaryData.petSex
-        selectedPetType = TemporaryData.petType
-        highlightGender()
-        highlightType()
+        ' Pet Sex
+        If Not String.IsNullOrEmpty(TemporaryData.petSex) Then
+            selectedSex = TemporaryData.petSex
+            highlightGender()
+        End If
+
+        ' Pet Type
+        If Not String.IsNullOrEmpty(TemporaryData.petType) Then
+            selectedPetType = TemporaryData.petType
+            highlightType()
+            UpdateBreedAutocompleteSource()
+        End If
+
+        ' Breed
+        If Not String.IsNullOrWhiteSpace(TemporaryData.petBreed) Then
+            txtBreed.Text = TemporaryData.petBreed
+        Else
+            txtBreed.Text = CStr(txtBreed.Tag)
+        End If
+
+        ' Vaccination Status
+        If Not String.IsNullOrWhiteSpace(TemporaryData.petvacStatus) Then
+            cbVetStat.Text = TemporaryData.petvacStatus
+            txtgetVac.Text = TemporaryData.petvacStatus
+        End If
+
     End Sub
 
 

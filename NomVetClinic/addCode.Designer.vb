@@ -35,9 +35,12 @@ Partial Class addCode
         Me.txtCode4v2 = New System.Windows.Forms.TextBox()
         Me.txtCode5v2 = New System.Windows.Forms.TextBox()
         Me.txtCode6v2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnConfirm = New System.Windows.Forms.Button()
+        Me.pctBlur = New System.Windows.Forms.PictureBox()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.pnlAbovebuttons2.SuspendLayout()
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlAbovebuttons2
@@ -96,6 +99,7 @@ Partial Class addCode
         Me.txtCode1v2.BackColor = System.Drawing.SystemColors.Highlight
         Me.txtCode1v2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCode1v2.Font = New System.Drawing.Font("Glacial Indifference", 36.0!, System.Drawing.FontStyle.Bold)
+        Me.txtCode1v2.ForeColor = System.Drawing.Color.White
         Me.txtCode1v2.Location = New System.Drawing.Point(729, 416)
         Me.txtCode1v2.MaxLength = 1
         Me.txtCode1v2.Name = "txtCode1v2"
@@ -108,6 +112,7 @@ Partial Class addCode
         Me.txtCode2v2.BackColor = System.Drawing.SystemColors.Info
         Me.txtCode2v2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCode2v2.Font = New System.Drawing.Font("Glacial Indifference", 36.0!, System.Drawing.FontStyle.Bold)
+        Me.txtCode2v2.ForeColor = System.Drawing.Color.White
         Me.txtCode2v2.Location = New System.Drawing.Point(849, 416)
         Me.txtCode2v2.MaxLength = 1
         Me.txtCode2v2.Name = "txtCode2v2"
@@ -120,6 +125,7 @@ Partial Class addCode
         Me.txtCode3v2.BackColor = System.Drawing.Color.Red
         Me.txtCode3v2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCode3v2.Font = New System.Drawing.Font("Glacial Indifference", 36.0!, System.Drawing.FontStyle.Bold)
+        Me.txtCode3v2.ForeColor = System.Drawing.Color.White
         Me.txtCode3v2.Location = New System.Drawing.Point(968, 416)
         Me.txtCode3v2.MaxLength = 1
         Me.txtCode3v2.Name = "txtCode3v2"
@@ -132,6 +138,7 @@ Partial Class addCode
         Me.txtCode4v2.BackColor = System.Drawing.Color.PeachPuff
         Me.txtCode4v2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCode4v2.Font = New System.Drawing.Font("Glacial Indifference", 36.0!, System.Drawing.FontStyle.Bold)
+        Me.txtCode4v2.ForeColor = System.Drawing.Color.White
         Me.txtCode4v2.Location = New System.Drawing.Point(1088, 416)
         Me.txtCode4v2.MaxLength = 1
         Me.txtCode4v2.Name = "txtCode4v2"
@@ -144,6 +151,7 @@ Partial Class addCode
         Me.txtCode5v2.BackColor = System.Drawing.SystemColors.InfoText
         Me.txtCode5v2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCode5v2.Font = New System.Drawing.Font("Glacial Indifference", 36.0!, System.Drawing.FontStyle.Bold)
+        Me.txtCode5v2.ForeColor = System.Drawing.Color.White
         Me.txtCode5v2.Location = New System.Drawing.Point(1208, 416)
         Me.txtCode5v2.MaxLength = 1
         Me.txtCode5v2.Name = "txtCode5v2"
@@ -156,6 +164,7 @@ Partial Class addCode
         Me.txtCode6v2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.txtCode6v2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCode6v2.Font = New System.Drawing.Font("Glacial Indifference", 36.0!, System.Drawing.FontStyle.Bold)
+        Me.txtCode6v2.ForeColor = System.Drawing.Color.White
         Me.txtCode6v2.Location = New System.Drawing.Point(1328, 416)
         Me.txtCode6v2.MaxLength = 1
         Me.txtCode6v2.Name = "txtCode6v2"
@@ -163,23 +172,49 @@ Partial Class addCode
         Me.txtCode6v2.TabIndex = 14
         Me.txtCode6v2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Button1
+        'btnConfirm
         '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(805, 555)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(311, 85)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnConfirm.FlatAppearance.BorderSize = 0
+        Me.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirm.Font = New System.Drawing.Font("Glacial Indifference", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfirm.ForeColor = System.Drawing.Color.White
+        Me.btnConfirm.Location = New System.Drawing.Point(805, 555)
+        Me.btnConfirm.Name = "btnConfirm"
+        Me.btnConfirm.Size = New System.Drawing.Size(311, 85)
+        Me.btnConfirm.TabIndex = 15
+        Me.btnConfirm.Text = "CONFIRM"
+        Me.btnConfirm.UseVisualStyleBackColor = True
+        '
+        'pctBlur
+        '
+        Me.pctBlur.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pctBlur.Image = CType(resources.GetObject("pctBlur.Image"), System.Drawing.Image)
+        Me.pctBlur.Location = New System.Drawing.Point(0, 0)
+        Me.pctBlur.Name = "pctBlur"
+        Me.pctBlur.Size = New System.Drawing.Size(1881, 922)
+        Me.pctBlur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pctBlur.TabIndex = 16
+        Me.pctBlur.TabStop = False
+        Me.pctBlur.Visible = False
+        '
+        'btnBack
+        '
+        Me.btnBack.FlatAppearance.BorderSize = 0
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Image = CType(resources.GetObject("btnBack.Image"), System.Drawing.Image)
+        Me.btnBack.Location = New System.Drawing.Point(461, 208)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(30, 29)
+        Me.btnBack.TabIndex = 17
+        Me.btnBack.UseVisualStyleBackColor = True
         '
         'addCode
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1881, 922)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.txtCode6v2)
         Me.Controls.Add(Me.txtCode5v2)
         Me.Controls.Add(Me.txtCode4v2)
@@ -188,12 +223,14 @@ Partial Class addCode
         Me.Controls.Add(Me.txtCode1v2)
         Me.Controls.Add(Me.pnlAbovebuttons2)
         Me.Controls.Add(Me.pctMain)
+        Me.Controls.Add(Me.pctBlur)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "addCode"
         Me.Text = "addCode"
         Me.pnlAbovebuttons2.ResumeLayout(False)
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -210,5 +247,7 @@ Partial Class addCode
     Friend WithEvents txtCode4v2 As TextBox
     Friend WithEvents txtCode5v2 As TextBox
     Friend WithEvents txtCode6v2 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnConfirm As Button
+    Friend WithEvents pctBlur As PictureBox
+    Friend WithEvents btnBack As Button
 End Class

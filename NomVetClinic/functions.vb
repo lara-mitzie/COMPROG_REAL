@@ -64,6 +64,28 @@ End Module
 'making the panels and button rounded 
 Module UIHelpers
 
+
+    Public Sub MakeFormRounded(frm As Form, radius As Integer)
+        Dim path As New GraphicsPath()
+        Dim rect As Rectangle = frm.ClientRectangle
+        Dim diameter As Integer = radius * 2
+
+        path.StartFigure()
+        path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90)
+        path.AddLine(rect.X + radius, rect.Y, rect.Right - radius, rect.Y)
+        path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90)
+        path.AddLine(rect.Right, rect.Y + radius, rect.Right, rect.Bottom - radius)
+        path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90)
+        path.AddLine(rect.Right - radius, rect.Bottom, rect.X + radius, rect.Bottom)
+        path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90)
+        path.AddLine(rect.X, rect.Bottom - radius, rect.X, rect.Y + radius)
+        path.CloseFigure()
+
+        frm.FormBorderStyle = FormBorderStyle.None
+        frm.Region = New Region(path)
+    End Sub
+
+
     Public Sub MakeButtonRounded(btn As Button, radius As Integer)
         Dim path As New GraphicsPath()
         path.AddArc(0, 0, radius, radius, 180, 90)
@@ -75,6 +97,15 @@ Module UIHelpers
     End Sub
 
 
+    Public Sub MakePictureBoxRounded(btn As PictureBox, radius As Integer)
+        Dim path As New GraphicsPath()
+        path.AddArc(0, 0, radius, radius, 180, 90)
+        path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90)
+        path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90)
+        path.AddArc(0, btn.Height - radius, radius, radius, 90, 90)
+        path.CloseAllFigures()
+        btn.Region = New Region(path)
+    End Sub
 
     Public Sub MakePanelRounded(pnl As Panel, radius As Integer)
         Dim path As New GraphicsPath()
@@ -294,6 +325,8 @@ Module positonsPanels
         button.Location = New Point(x, y)
     End Sub
 
+
+    'pentinfo2
     Public Sub txtPetNamePI(textbox As TextBox)
         Dim x As Integer = 150
         Dim y As Integer = 163
@@ -404,6 +437,8 @@ Module positonsPanels
     End Sub
 
 
+
+    'calendar
     Public Sub btnAddPetCA(button As Button)
         Dim x As Integer = 600
         Dim y As Integer = 767
@@ -534,7 +569,21 @@ Module positonsPanels
     End Sub
 
 
+    Public Sub btnConfirmAC(btn As Button)
+        Dim x As Integer = 660
+        Dim y As Integer = 533
 
+        btn.Location = New Point(x, y)
+    End Sub
+
+    Public Sub btnBackAC(btn As Button)
+        Dim x As Integer = 375
+        Dim y As Integer = 198
+
+        btn.Location = New Point(x, y)
+    End Sub
+
+    'pentinfo2
 
 
 End Module

@@ -35,9 +35,28 @@
             Return
         End If
 
+        If txtEmailAdd.Text.Contains("@") AndAlso txtEmailAdd.Text.Contains(".") Then
+            If txtEmailAdd.Text.Trim.EndsWith("@gmail.com") Then
+                TemporaryData.EmailAddress = txtEmailAdd.Text
+
+            ElseIf txtEmailAdd.Text.Trim.EndsWith("@yahoo.com") Then
+                TemporaryData.EmailAddress = txtEmailAdd.Text
+            Else
+                MessageBox.Show("Please Enter a valid Email", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+        Else
+            MessageBox.Show("Please Enter a valid Email", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+
+        If txtContactNumber.Text.Length < 10 Then
+            MessageBox.Show("Phone Number must contains  10 Numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
 
         TemporaryData.OwnerName = txtFullName.Text
-        TemporaryData.EmailAddress = txtEmailAdd.Text
         TemporaryData.Address = txtAddress.Text
         TemporaryData.ContactNumber = txtContactNumber.Text
 
@@ -46,6 +65,20 @@
     End Sub
 
 
+
+    Private Sub keyPressContactNUmber(sender As Object, e As KeyPressEventArgs) Handles txtContactNumber.KeyPress
+        If txtContactNumber.Text.Length = 10 AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+
+    End Sub
+    Private Sub keyPressFullName(sender As Object, e As KeyPressEventArgs) Handles txtFullName.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+    End Sub
 
 
     Private Sub Ownerinformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -59,7 +92,7 @@
         txtEmailAdd.Text = CStr(txtEmailAdd.Tag)
         txtAddress.Tag = "ADDRESS"
         txtAddress.Text = CStr(txtAddress.Tag)
-        txtContactNumber.Tag = "PHONE"
+        txtContactNumber.Tag = "PHONE(0+)"
         txtContactNumber.Text = CStr(txtContactNumber.Tag)
 
 
@@ -115,6 +148,9 @@
         Next
     End Sub
 
+
+
+
     Private Sub TextBox_Enter(sender As Object, e As EventArgs) Handles txtFullName.Enter, txtEmailAdd.Enter, txtAddress.Enter, txtContactNumber.Enter
 
         Dim tb As TextBox = CType(sender, TextBox)
@@ -160,15 +196,28 @@
         btnNext.Invalidate() ' Force the button to repaint
     End Sub
 
+
+
+
     'pnl Button Mouse enter
     Private Sub pctHomePage_MouseEnter(sender As Object, e As EventArgs) Handles pctBoxMain.MouseEnter
         PanelAboveSlide.MouseEnter(pnlAbovebuttons3, pnlTopTImer4)
     End Sub
 
+
+
+
+
     'pnl Button Mouse Move
     Private Sub MouseMovePanel(sender As Object, e As MouseEventArgs) Handles pctBoxMain.MouseMove
         PanelAboveSlide.MouseMove(pnlAbovebuttons3, e, pnlTopTImer4)
     End Sub
+
+
+
+
+
+
     Private Sub handles_keyUSername(sender As Object, e As KeyEventArgs) Handles txtFullName.KeyDown, txtEmailAdd.KeyDown, txtAddress.KeyDown, txtContactNumber.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True

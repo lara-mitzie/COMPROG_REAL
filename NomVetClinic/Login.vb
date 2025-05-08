@@ -1,4 +1,4 @@
-﻿'Imports System.Windows.Forms.VisualStyles
+﻿
 Imports MySql.Data.MySqlClient
 
 Public Class Login

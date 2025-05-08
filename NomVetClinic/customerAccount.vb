@@ -21,7 +21,16 @@ Public Class customerAccount
         MakeButtonRounded(btnAddPet, 65)
     End Sub
 
+    Public Sub RefreshCustomerAccount()
 
+        LoadSummary(TemporaryData.LoggedInOwnerID)
+    End Sub
+
+
+    Private Sub btnAddPet_Click(sender As Object, e As EventArgs) Handles btnAddPet.Click
+        petInfo2.Show()
+        Me.Hide()
+    End Sub
 
     Public Class RoundedPanel
         Inherits Panel
@@ -68,9 +77,7 @@ Public Class customerAccount
         ' Style the main form elements
         Me.BackColor = Color.FromArgb(245, 245, 247)
 
-        ' Style the client name label
-        lblClientName.Font = New Font("Segoe UI", 14, FontStyle.Bold)
-        lblClientName.ForeColor = Color.FromArgb(50, 50, 50)
+
 
         ' Style the pets container panel
         pnlPetList.BackColor = Color.FromArgb(220, 205, 187)
@@ -96,12 +103,7 @@ Public Class customerAccount
                     cmdOwner.Parameters.Add("@ownerID", MySqlDbType.Int32).Value = ownerId
                     Dim ownerName As Object = cmdOwner.ExecuteScalar()
 
-                    If ownerName IsNot Nothing Then
-                        lblClientName.Text = ((ownerName.ToString()))
-                    Else
-                        lblClientName.Text = "Owner Not Found"
-                        Return
-                    End If
+
                 End Using
 
                 ' Now get pet information
@@ -164,7 +166,7 @@ Public Class customerAccount
         lblPetName.Text = petName
         lblPetName.Font = New Font("Segoe UI", 30, FontStyle.Bold)
         lblPetName.ForeColor = Color.FromArgb(50, 50, 50)
-        lblPetName.Location = New Point(170, 20)
+        lblPetName.Location = New Point(170, 15)
         lblPetName.AutoSize = True
 
         ' Pet details label
@@ -233,6 +235,7 @@ Public Class customerAccount
         ' Second button (below the btnDetails)
         Dim btnAppointment As New Button()
         btnAppointment.Text = "VIEW APPOINTMENT"
+        btnAppointment.Tag = petID
         btnAppointment.Size = New Size(180, 65)
         btnAppointment.Location = New Point(1010, 77)
         btnAppointment.Anchor = AnchorStyles.Top Or AnchorStyles.Right
@@ -278,7 +281,7 @@ Public Class customerAccount
         petPanel.Controls.Add(lblStatusInfo)
 
 
-        ' Important: Add panel click handler directly in-line instead of using AddressOf
+
         AddHandler btnDetails.Click, Sub(sender As Object, e As EventArgs)
                                          Dim clickedButton As Button = TryCast(sender, Button)
                                          If clickedButton IsNot Nothing Then
@@ -287,8 +290,16 @@ Public Class customerAccount
                                              Cursor = Cursors.WaitCursor
                                              Try
                                                  Dim frmPetInfo As New petInformation()
+
+                                                 pctBlur.Visible = True
+                                                 pctBlur.BringToFront()
+
                                                  frmPetInfo.PetID = clickedPetID
                                                  frmPetInfo.ShowDialog()
+
+                                                 pctBlur.Visible = False
+                                                 pctBlur.SendToBack()
+
                                              Catch ex As Exception
                                                  MessageBox.Show("Error opening pet information: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                                              Finally
@@ -296,6 +307,25 @@ Public Class customerAccount
                                              End Try
                                          End If
                                      End Sub
+
+        AddHandler btnAppointment.Click, Sub(sender As Object, e As EventArgs)
+                                             Dim clickedButton As Button = TryCast(sender, Button)
+                                             If clickedButton IsNot Nothing Then
+                                                 Dim clickedPetID As Integer = Integer.Parse(clickedButton.Tag.ToString())
+
+                                                 Cursor = Cursors.WaitCursor
+                                                 Try
+                                                     ' Open the appointment form and pass the pet ID
+                                                     Dim frmAppointment As New viewAppointment()
+                                                     frmAppointment.PetId = clickedPetID  ' Set the pet ID property
+                                                     frmAppointment.ShowDialog()
+                                                 Catch ex As Exception
+                                                     MessageBox.Show("Error opening appointment information: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                                                 Finally
+                                                     Cursor = Cursors.Default
+                                                 End Try
+                                             End If
+                                         End Sub
 
 
         ' Add the panel to the container
@@ -435,6 +465,7 @@ Public Class customerAccount
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
         Form1.Close()
+        Login.Close()
     End Sub
 
 

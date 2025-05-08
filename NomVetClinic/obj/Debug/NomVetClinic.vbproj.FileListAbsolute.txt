@@ -42,3 +42,9 @@ C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.petInf
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.pickService.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Calendar.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.addCode.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.bookSummary.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.viewAppointment.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Calendar2.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.petInfo2.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.pickServices2.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.bookSummary2vb.resources

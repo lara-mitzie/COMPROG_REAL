@@ -112,10 +112,28 @@
     <Compile Include="booking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bookSummary.Designer.vb">
+      <DependentUpon>bookSummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bookSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bookSummary2vb.Designer.vb">
+      <DependentUpon>bookSummary2vb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bookSummary2vb.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Calendar.Designer.vb">
       <DependentUpon>Calendar.vb</DependentUpon>
     </Compile>
     <Compile Include="Calendar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar2.Designer.vb">
+      <DependentUpon>Calendar2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="customerAccount.Designer.vb">
@@ -197,6 +215,12 @@
     <Compile Include="petInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PetInfo2.Designer.vb">
+      <DependentUpon>PetInfo2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PetInfo2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PetInformation.Designer.vb">
       <DependentUpon>PetInformation.vb</DependentUpon>
     </Compile>
@@ -209,7 +233,19 @@
     <Compile Include="pickService.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="pickServices2.Designer.vb">
+      <DependentUpon>pickServices2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pickServices2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TemporaryData.vb" />
+    <Compile Include="viewAppointment.Designer.vb">
+      <DependentUpon>viewAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="viewAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="addCode.resx">
@@ -221,8 +257,17 @@
     <EmbeddedResource Include="booking.resx">
       <DependentUpon>booking.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="bookSummary.resx">
+      <DependentUpon>bookSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bookSummary2vb.resx">
+      <DependentUpon>bookSummary2vb.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calendar.resx">
       <DependentUpon>Calendar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar2.resx">
+      <DependentUpon>Calendar2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customerAccount.resx">
       <DependentUpon>customerAccount.vb</DependentUpon>
@@ -263,11 +308,20 @@
     <EmbeddedResource Include="petInfo.resx">
       <DependentUpon>petInfo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PetInfo2.resx">
+      <DependentUpon>PetInfo2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PetInformation.resx">
       <DependentUpon>PetInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pickService.resx">
       <DependentUpon>pickService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pickServices2.resx">
+      <DependentUpon>pickServices2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewAppointment.resx">
+      <DependentUpon>viewAppointment.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

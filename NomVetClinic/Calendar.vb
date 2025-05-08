@@ -123,15 +123,23 @@ Public Class Calendar
                             cellLabel.Enabled = False
                             cellLabel.Text &= vbCrLf & "Past"
 
+
+                        ElseIf thisDate.DayOfWeek = DayOfWeek.Sunday Then
+                            ' Closed on Sundays
+                            cellLabel.BackColor = Color.LightGray
+                            cellLabel.ForeColor = Color.Red
+                            cellLabel.Enabled = False
+                            cellLabel.Text &= vbCrLf & "Closed"
+
                         ElseIf bookedDates.ContainsKey(thisDate.Date) Then
                             Dim status As String = bookedDates(thisDate.Date)
 
-                            If status = "Confirmed" Then
+                            If status = "confirmed" Then
                                 cellLabel.BackColor = Color.FromArgb(255, 116, 108)
                                 cellLabel.ForeColor = Color.White
                                 cellLabel.Enabled = False
-                                cellLabel.Text &= vbCrLf & "Booked"
-                            ElseIf status = "Cancelled" Then
+                                cellLabel.Text &= vbCrLf & "booked"
+                            ElseIf status = "cancelled" Then
 
                                 AddHandler cellLabel.Click, AddressOf Day_Click
                             End If
@@ -255,8 +263,6 @@ Public Class Calendar
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-
-        addCode.Show()
         Me.Close()
     End Sub
 
