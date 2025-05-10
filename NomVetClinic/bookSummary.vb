@@ -102,7 +102,7 @@ Public Class bookSummary
 
             Dim serviceID As Integer = Convert.ToInt32(cmd.LastInsertedId)
 
-            ' Ensure serviceID is valid
+            ' checkin if the id is valid ba
             If serviceID = 0 Then
                 Throw New Exception("Error: ServiceID was not correctly retrieved.")
             End If

@@ -59,7 +59,7 @@ Public Class Login
                 Dim sqlReader As MySqlDataReader = cmd.ExecuteReader
 
                 If sqlReader.Read Then
-                    ' ✅ Store owner ID and name
+
                     TemporaryData.LoggedInOwnerID = sqlReader("ownerID")
                     TemporaryData.LoggedInOwnerName = sqlReader("ownerName").ToString()
 
@@ -215,10 +215,11 @@ Public Class Login
                 Case "txtCode5"
                     txtCode6.Focus()
                 Case "txtCode6"
-                    ' All digits entered, optionally trigger validation
+
             End Select
         End If
-        ' If user pressed Backspace and the textbox is empty, move back
+
+        ' If user pressed Backspace babalik sa txtbox 
         If e.KeyCode = Keys.Back AndAlso currentTextBox.Text = "" Then
             Select Case currentTextBox.Name
                 Case "txtCode6"

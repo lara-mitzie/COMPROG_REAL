@@ -88,10 +88,10 @@
                 Case "txtCode5v2"
                     txtCode6v2.Focus()
                 Case "txtCode6v2"
-                    ' All digits entered, optionally trigger validation
+
             End Select
         End If
-        ' If user pressed Backspace and the textbox is empty, move back
+        ' If user pressed Backspace babalik boi sa prior textbox
         If e.KeyCode = Keys.Back AndAlso currentTextBox.Text = "" Then
             Select Case currentTextBox.Name
                 Case "txtCode6v2"
