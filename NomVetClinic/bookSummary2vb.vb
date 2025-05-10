@@ -1,7 +1,23 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class bookSummary2vb
+    Private WithEvents scrollTimer As New Timer With {.Interval = 10}
+    Private isMouseOver As Boolean = False
+
     Private Sub ucSummaryInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AddHandler btnConfirm.Paint, AddressOf btnBookNow_Paint
+        MakeFormRounded(Me, 48)
+        PanelAboveSlide.InitializePanel(pnlAbovebuttons2, TimerPanel2)
+        MakeButtonRounded(btnConfirm, 48)
+        Dim labels As Label() = {
+        lblPetName, lblPSex, lblPAge, lblBookingdate, lblPType, lblPWeight, lblService, lblServicePrice, lblPVacStatus, lblPBrithday, lblPbreed
+        }
+
+        For Each tb As Label In labels
+            tb.BackColor = Color.FromArgb(239, 232, 224)
+            tb.ForeColor = Color.FromArgb(173, 159, 155)
+        Next
+
 
         lblPetName.Text = TemporaryData.petName
         lblPSex.Text = TemporaryData.petSex
@@ -73,6 +89,7 @@ Public Class bookSummary2vb
             MessageBox.Show("All data submitted successfully!")
             customerAccount.RefreshCustomerAccount()
             customerAccount.Show()
+            TemporaryData.Clear()
             Form1.Hide()
             Me.Hide()
 
@@ -109,4 +126,23 @@ Public Class bookSummary2vb
     Private Sub pctHomePage_MouseEnter(sender As Object, e As EventArgs) Handles pctMain.MouseEnter
         PanelAboveSlide.MouseEnter(pnlAbovebuttons2, TimerPanel2)
     End Sub
+
+    Private Sub btnBookNow_Paint(sender As Object, e As PaintEventArgs)
+        If isMouseOver Then
+            GradientHelper.DrawGradientButton(sender, e, Color.FromArgb(0, 151, 178), Color.FromArgb(126, 217, 87), Drawing2D.LinearGradientMode.Horizontal)
+        Else
+            GradientHelper.DrawGradientButton(sender, e, Color.FromArgb(126, 217, 87), Color.FromArgb(0, 151, 178), Drawing2D.LinearGradientMode.Horizontal)
+        End If
+    End Sub
+
+    Private Sub btnBookNow_MouseEnter(sender As Object, e As EventArgs) Handles btnConfirm.MouseEnter
+        isMouseOver = True
+        btnConfirm.Invalidate()
+    End Sub
+
+    Private Sub btnBookNow_MouseLeave(sender As Object, e As EventArgs) Handles btnConfirm.MouseLeave
+        isMouseOver = False
+        btnConfirm.Invalidate()
+    End Sub
+
 End Class

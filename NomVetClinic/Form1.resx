@@ -121,7 +121,7 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAwMAAAE/CAYAAAAaBR/cAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAA/7JJREFUeF7svXWYXMeZPdzfL9kkG2beMDicDe9umBxwYscBxwEH7DBvNrYMQgts
+        vgAADr4B6kKxwAAA/7JJREFUeF7svXWYXMeZPdzfL9kkG2beMDicDe9umBxwYscBxwEH7DBvNrYMQgts
         WWhZFvNIGuEIRyNpQMM8o2GxZTGjQZqZ7vd7TlW9t9+uvs09o5FUf5ynu2/fvreq7u3uc14MEFHAwcHB
         wcHBwcHBweH6Q9QGBwcHBwcHBwcHB4frA1EbHBwcHBwcHBwcHByuD0RtcHBwcHBwcHBwcHC4PhC1wcHB
         wcHBwcHBwcHh+kDUBgcHBwcHBwcHBweH6wNRGxwcHBwcHBwcHBwcrg9EbXBwcHBwcHBwcHBwuD4QtcHB
@@ -1580,7 +1580,7 @@
   <data name="btnMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAEJJREFUOE/tzDEKADAMw0D//9MunUrRVJSxwwWsIWmbSQgWgoVgIVgIFoKFYN0j
+        vwAADr8BOAVTJAAAAEJJREFUOE/tzDEKADAMw0D//9MunUrRVJSxwwWsIWmbSQgWgoVgIVgIFoKFYN0j
         2efZf3jGBAQLwUKwECwEC8FCsBaLLTv9f9g/+gAAAABJRU5ErkJggg==
 </value>
   </data>

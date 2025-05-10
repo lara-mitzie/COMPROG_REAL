@@ -62,7 +62,7 @@ Partial Class bookSummary2vb
         Me.btnMinimize.FlatAppearance.BorderSize = 0
         Me.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMinimize.Image = CType(resources.GetObject("btnMinimize.Image"), System.Drawing.Image)
-        Me.btnMinimize.Location = New System.Drawing.Point(1266, 0)
+        Me.btnMinimize.Location = New System.Drawing.Point(1204, 0)
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(35, 21)
         Me.btnMinimize.TabIndex = 1
@@ -74,7 +74,7 @@ Partial Class bookSummary2vb
         Me.btnExit.FlatAppearance.BorderSize = 0
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(1303, 0)
+        Me.btnExit.Location = New System.Drawing.Point(1241, 0)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(35, 21)
         Me.btnExit.TabIndex = 0
@@ -93,18 +93,19 @@ Partial Class bookSummary2vb
         '
         'btnConfirm
         '
+        Me.btnConfirm.Font = New System.Drawing.Font("Glacial Indifference", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirm.Location = New System.Drawing.Point(693, 597)
         Me.btnConfirm.Name = "btnConfirm"
         Me.btnConfirm.Size = New System.Drawing.Size(319, 92)
         Me.btnConfirm.TabIndex = 11
-        Me.btnConfirm.Text = "Button1"
+        Me.btnConfirm.Text = "CONFIRM"
         Me.btnConfirm.UseVisualStyleBackColor = True
         '
         'lblService
         '
         Me.lblService.AutoSize = True
         Me.lblService.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.lblService.Location = New System.Drawing.Point(231, 229)
+        Me.lblService.Location = New System.Drawing.Point(215, 259)
         Me.lblService.Name = "lblService"
         Me.lblService.Size = New System.Drawing.Size(77, 28)
         Me.lblService.TabIndex = 12
@@ -114,7 +115,7 @@ Partial Class bookSummary2vb
         '
         Me.lblServicePrice.AutoSize = True
         Me.lblServicePrice.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.lblServicePrice.Location = New System.Drawing.Point(303, 310)
+        Me.lblServicePrice.Location = New System.Drawing.Point(215, 340)
         Me.lblServicePrice.Name = "lblServicePrice"
         Me.lblServicePrice.Size = New System.Drawing.Size(82, 28)
         Me.lblServicePrice.TabIndex = 13
@@ -124,7 +125,7 @@ Partial Class bookSummary2vb
         '
         Me.lblBookingdate.AutoSize = True
         Me.lblBookingdate.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.lblBookingdate.Location = New System.Drawing.Point(313, 390)
+        Me.lblBookingdate.Location = New System.Drawing.Point(215, 423)
         Me.lblBookingdate.Name = "lblBookingdate"
         Me.lblBookingdate.Size = New System.Drawing.Size(82, 28)
         Me.lblBookingdate.TabIndex = 14
@@ -235,6 +236,7 @@ Partial Class bookSummary2vb
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "bookSummary2vb"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "bookSummary2vb"
         Me.pnlAbovebuttons2.ResumeLayout(False)
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).EndInit()

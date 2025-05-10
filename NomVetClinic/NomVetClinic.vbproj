@@ -124,6 +124,12 @@
     <Compile Include="bookSummary2vb.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bookSummary3.Designer.vb">
+      <DependentUpon>bookSummary3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bookSummary3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Calendar.Designer.vb">
       <DependentUpon>Calendar.vb</DependentUpon>
     </Compile>
@@ -134,6 +140,12 @@
       <DependentUpon>Calendar2.vb</DependentUpon>
     </Compile>
     <Compile Include="Calendar2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar3.Designer.vb">
+      <DependentUpon>Calendar3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar3.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="customerAccount.Designer.vb">
@@ -239,6 +251,12 @@
     <Compile Include="pickServices2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="pickServices3.Designer.vb">
+      <DependentUpon>pickServices3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pickServices3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TemporaryData.vb" />
     <Compile Include="viewAppointment.Designer.vb">
       <DependentUpon>viewAppointment.vb</DependentUpon>
@@ -263,11 +281,17 @@
     <EmbeddedResource Include="bookSummary2vb.resx">
       <DependentUpon>bookSummary2vb.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="bookSummary3.resx">
+      <DependentUpon>bookSummary3.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calendar.resx">
       <DependentUpon>Calendar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calendar2.resx">
       <DependentUpon>Calendar2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar3.resx">
+      <DependentUpon>Calendar3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customerAccount.resx">
       <DependentUpon>customerAccount.vb</DependentUpon>
@@ -319,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pickServices2.resx">
       <DependentUpon>pickServices2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pickServices3.resx">
+      <DependentUpon>pickServices3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewAppointment.resx">
       <DependentUpon>viewAppointment.vb</DependentUpon>

@@ -583,7 +583,7 @@ Module positonsPanels
         btn.Location = New Point(x, y)
     End Sub
 
-    'pentinfo2
+
 
 
 End Module

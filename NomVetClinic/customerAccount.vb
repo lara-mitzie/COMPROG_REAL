@@ -17,7 +17,7 @@ Public Class customerAccount
         Me.WindowState = FormWindowState.Maximized
         AddHandler btnAddPet.Paint, AddressOf btnBookNow_Paint
         positonsPanels.btnAddPetCA(btnAddPet)
-
+        btnLogOut.BackColor = Color.FromArgb(239, 232, 224)
         MakeButtonRounded(btnAddPet, 65)
     End Sub
 
@@ -317,8 +317,16 @@ Public Class customerAccount
                                                  Try
                                                      ' Open the appointment form and pass the pet ID
                                                      Dim frmAppointment As New viewAppointment()
+
+                                                     pctBlur.Visible = True
+                                                     pctBlur.BringToFront()
+
                                                      frmAppointment.PetId = clickedPetID  ' Set the pet ID property
                                                      frmAppointment.ShowDialog()
+
+                                                     pctBlur.Visible = False
+                                                     pctBlur.SendToBack()
+
                                                  Catch ex As Exception
                                                      MessageBox.Show("Error opening appointment information: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                                                  Finally
@@ -488,6 +496,12 @@ Public Class customerAccount
     'pnl Button Mouse Move
     Private Sub MouseMovePanel(sender As Object, e As MouseEventArgs) Handles pctMain.MouseMove
         PanelAboveSlide.MouseMove(pnlAbovebuttons2, e, pnlTimer2)
+    End Sub
+
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        TemporaryData.LoggedInOwnerID = 0
+        Login.Show()
+        Me.Close()
     End Sub
 
 

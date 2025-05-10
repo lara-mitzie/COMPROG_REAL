@@ -31,8 +31,8 @@ Partial Class viewAppointment
         Me.TimerPanel = New System.Windows.Forms.Timer(Me.components)
         Me.pnlNearest = New System.Windows.Forms.Panel()
         Me.pnlPast = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnBookAgain = New System.Windows.Forms.Button()
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAbovebuttons2.SuspendLayout()
         Me.SuspendLayout()
@@ -100,31 +100,39 @@ Partial Class viewAppointment
         Me.pnlPast.Size = New System.Drawing.Size(749, 229)
         Me.pnlPast.TabIndex = 11
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(75, 455)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(219, 53)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(615, 455)
+        Me.btnCancel.BackColor = System.Drawing.Color.PaleGreen
+        Me.btnCancel.FlatAppearance.BorderSize = 0
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Location = New System.Drawing.Point(615, 460)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(219, 53)
         Me.btnCancel.TabIndex = 13
-        Me.btnCancel.Text = "Button2"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        '
+        'btnBookAgain
+        '
+        Me.btnBookAgain.BackColor = System.Drawing.Color.PaleGreen
+        Me.btnBookAgain.FlatAppearance.BorderSize = 0
+        Me.btnBookAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBookAgain.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBookAgain.Location = New System.Drawing.Point(86, 460)
+        Me.btnBookAgain.Name = "btnBookAgain"
+        Me.btnBookAgain.Size = New System.Drawing.Size(219, 53)
+        Me.btnBookAgain.TabIndex = 14
+        Me.btnBookAgain.Text = "BOOK AGAIN"
+        Me.btnBookAgain.UseVisualStyleBackColor = False
         '
         'viewAppointment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(916, 537)
+        Me.Controls.Add(Me.btnBookAgain)
         Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.pnlPast)
         Me.Controls.Add(Me.pnlNearest)
         Me.Controls.Add(Me.pnlAbovebuttons2)
@@ -147,6 +155,6 @@ Partial Class viewAppointment
     Friend WithEvents TimerPanel As Timer
     Friend WithEvents pnlNearest As Panel
     Friend WithEvents pnlPast As Panel
-    Friend WithEvents Button1 As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents btnBookAgain As Button
 End Class

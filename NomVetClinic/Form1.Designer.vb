@@ -109,7 +109,7 @@ Partial Class Form1
         Me.btnServices.Name = "btnServices"
         Me.btnServices.Size = New System.Drawing.Size(187, 57)
         Me.btnServices.TabIndex = 1
-        Me.btnServices.Text = "LOCATION"
+        Me.btnServices.Text = "INFO"
         Me.btnServices.UseVisualStyleBackColor = True
         '
         'PictureBox1

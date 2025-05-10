@@ -32,6 +32,7 @@ Partial Class customerAccount
         Me.pnlTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.pctMain = New System.Windows.Forms.PictureBox()
         Me.pctBlur = New System.Windows.Forms.PictureBox()
+        Me.btnLogOut = New System.Windows.Forms.Button()
         Me.pnlAbovebuttons2.SuspendLayout()
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,11 +119,24 @@ Partial Class customerAccount
         Me.pctBlur.TabStop = False
         Me.pctBlur.Visible = False
         '
+        'btnLogOut
+        '
+        Me.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLogOut.FlatAppearance.BorderSize = 0
+        Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogOut.Image = CType(resources.GetObject("btnLogOut.Image"), System.Drawing.Image)
+        Me.btnLogOut.Location = New System.Drawing.Point(224, 129)
+        Me.btnLogOut.Name = "btnLogOut"
+        Me.btnLogOut.Size = New System.Drawing.Size(54, 49)
+        Me.btnLogOut.TabIndex = 6
+        Me.btnLogOut.UseVisualStyleBackColor = True
+        '
         'customerAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1884, 986)
+        Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.btnAddPet)
         Me.Controls.Add(Me.pnlAbovebuttons2)
         Me.Controls.Add(Me.pnlPetList)
@@ -146,4 +160,5 @@ Partial Class customerAccount
     Friend WithEvents btnAddPet As Button
     Friend WithEvents pctMain As PictureBox
     Friend WithEvents pctBlur As PictureBox
+    Friend WithEvents btnLogOut As Button
 End Class

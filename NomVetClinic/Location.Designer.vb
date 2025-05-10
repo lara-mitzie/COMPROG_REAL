@@ -103,7 +103,7 @@ Partial Class Location
         '
         Me.pctBack.BackColor = System.Drawing.Color.White
         Me.pctBack.Image = CType(resources.GetObject("pctBack.Image"), System.Drawing.Image)
-        Me.pctBack.Location = New System.Drawing.Point(46, 27)
+        Me.pctBack.Location = New System.Drawing.Point(72, 27)
         Me.pctBack.Name = "pctBack"
         Me.pctBack.Size = New System.Drawing.Size(66, 60)
         Me.pctBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

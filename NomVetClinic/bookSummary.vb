@@ -119,6 +119,10 @@ Public Class bookSummary
 
             MessageBox.Show("All data submitted successfully!")
 
+            TemporaryData.Clear()
+            addCode.Close()
+            Form1.Show()
+
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         Finally
@@ -128,8 +132,7 @@ Public Class bookSummary
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
-        addCode.Close()
-        Form1.Show()
+
     End Sub
 
 

@@ -9,16 +9,12 @@ Public Class Calendar2
         AddHandler btnBackDate.Paint, AddressOf btnBookNow_Paint
         AddHandler btnConfirm.Paint, AddressOf btnBookNow_Paint
 
-
         PanelAboveSlide.InitializePanel(pnlAbovebuttons2, pnlTimer9)
         Me.WindowState = FormWindowState.Maximized
-
-
 
         MakeButtonRounded(btnBackDate, 48)
         MakeButtonRounded(btnConfirm, 48)
         MakeButtonRounded(btnNextDate, 48)
-
 
         positonsPanels.btnNextDateCAl(btnNextDate)
         positonsPanels.btnConfirmCAl(btnConfirm)
@@ -26,36 +22,33 @@ Public Class Calendar2
         positonsPanels.tlpCalendarCAl(tableCalendar)
         positonsPanels.lblMonthCAL(lblMonth)
 
-
         tableCalendar.BackColor = Color.FromArgb(253, 253, 248)
         lblMonth.BackColor = Color.FromArgb(253, 253, 248)
         lblMonth.ForeColor = Color.FromArgb(80, 89, 80)
-
     End Sub
-
-
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         If TemporaryData.BookingDate = Date.MinValue Then
             MessageBox.Show("Please select a date before confirming the booking.", "Missing Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
-        bookSummary2vb.Show()
-        Me.Close()
+
+
+        pctBlur.Visible = True
+        pctBlur.BringToFront()
+
+        bookSummary2vb.ShowDialog()
+
+        pctBlur.Visible = False
+        pctBlur.SendToBack()
+
     End Sub
-
-
-
-
-
 
     Private _currentMonth As Integer = Date.Today.Month
     Private _currentYear As Integer = Date.Today.Year
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializeCalendar()
-
-
     End Sub
 
     Private Sub InitializeCalendar()
@@ -63,7 +56,6 @@ Public Class Calendar2
     End Sub
 
     Private Sub BuildCalendar(targetDate As Date)
-
         tableCalendar.ColumnStyles.Clear()
         tableCalendar.RowStyles.Clear()
 
@@ -74,8 +66,6 @@ Public Class Calendar2
         For i As Integer = 1 To 6
             tableCalendar.RowStyles.Add(New RowStyle(SizeType.Percent, 100 / 6))
         Next
-
-
 
         Try
             ' Clear existing controls
@@ -91,22 +81,21 @@ Public Class Calendar2
             ' Get booked dates from the database
             Dim bookedDates As Dictionary(Of Date, String) = GetBookedDates(calendarDate.Month, calendarDate.Year)
 
-
             For row As Integer = 0 To MAX_ROWS - 1
                 For col As Integer = 0 To DAYS_IN_WEEK - 1
                     Dim cellLabel As New Label With {
-                    .Dock = DockStyle.Fill,
-                    .TextAlign = ContentAlignment.MiddleCenter,
-                    .BorderStyle = BorderStyle.FixedSingle,
-                    .Font = New Font("Glacial Indifference", 12, FontStyle.Regular),
-                    .BackColor = Color.White,
-                    .Padding = New Padding(2)
-                }
+                        .Dock = DockStyle.Fill,
+                        .TextAlign = ContentAlignment.MiddleCenter,
+                        .BorderStyle = BorderStyle.FixedSingle,
+                        .Font = New Font("Glacial Indifference", 12, FontStyle.Regular),
+                        .BackColor = Color.White,
+                        .Padding = New Padding(2)
+                    }
 
                     Dim cellIndex As Integer = row * DAYS_IN_WEEK + col
 
                     If cellIndex >= firstDayOffset AndAlso
-                   cellIndex < firstDayOffset + Date.DaysInMonth(calendarDate.Year, calendarDate.Month) Then
+                       cellIndex < firstDayOffset + Date.DaysInMonth(calendarDate.Year, calendarDate.Month) Then
 
                         Dim dayNumber As Integer = cellIndex - firstDayOffset + 1
                         cellLabel.Text = dayNumber.ToString()
@@ -119,38 +108,42 @@ Public Class Calendar2
                             cellLabel.ForeColor = Color.DarkGray
                             cellLabel.Enabled = False
                             cellLabel.Text &= vbCrLf & "Past"
-
-
                         ElseIf thisDate.DayOfWeek = DayOfWeek.Sunday Then
                             ' Closed on Sundays
                             cellLabel.BackColor = Color.LightGray
                             cellLabel.ForeColor = Color.Red
                             cellLabel.Enabled = False
                             cellLabel.Text &= vbCrLf & "Closed"
-
                         ElseIf bookedDates.ContainsKey(thisDate.Date) Then
                             Dim status As String = bookedDates(thisDate.Date)
 
                             If status = "confirmed" Then
+                                ' Confirmed bookings - not available
                                 cellLabel.BackColor = Color.FromArgb(255, 116, 108)
                                 cellLabel.ForeColor = Color.White
                                 cellLabel.Enabled = False
-                                cellLabel.Text &= vbCrLf & "booked"
+                                cellLabel.Text &= vbCrLf & "Booked"
                             ElseIf status = "cancelled" Then
-
+                                ' Cancelled bookings - just make them clickable like regular dates
+                                ' No special styling, just normal appearance
                                 AddHandler cellLabel.Click, AddressOf Day_Click
+                                cellLabel.Cursor = Cursors.Hand
                             End If
-
                         Else
-                            ' Available date
+                            ' Regular available date
+                            cellLabel.BackColor = Color.White
+                            cellLabel.Cursor = Cursors.Hand
                             AddHandler cellLabel.Click, AddressOf Day_Click
                         End If
-
-
 
                         ' Highlight today's date
                         If thisDate = Date.Today Then
                             cellLabel.Font = New Font(cellLabel.Font, FontStyle.Bold)
+                            If Not cellLabel.Text.Contains("Past") AndAlso
+                               Not cellLabel.Text.Contains("Closed") AndAlso
+                               Not cellLabel.Text.Contains("Booked") Then
+                                cellLabel.Text &= vbCrLf & "Today"
+                            End If
                         End If
                     End If
 
@@ -160,15 +153,14 @@ Public Class Calendar2
 
         Catch ex As Exception
             MessageBox.Show($"Error building calendar: {ex.Message}",
-                      "Calendar Error",
-                      MessageBoxButtons.OK,
-                      MessageBoxIcon.Error)
+                          "Calendar Error",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Error)
         End Try
 
         ' Update the month label
-        lblMonth.Text = targetDate.ToString("MMMM")
+        lblMonth.Text = targetDate.ToString("MMMM yyyy")  ' Added year for better context
     End Sub
-
 
     Private Function CalculateFirstDayOffset(dateToCalculate As Date) As Integer
         Return CInt(dateToCalculate.DayOfWeek) Mod 7
@@ -177,20 +169,19 @@ Public Class Calendar2
     Private Sub Day_Click(sender As Object, e As EventArgs)
         Dim clickedLabel As Label = DirectCast(sender, Label)
 
-        If String.IsNullOrWhiteSpace(clickedLabel.Text) Then
-            Return
+        ' Extract day number from label text (it may contain additional text)
+        Dim parts() As String = clickedLabel.Text.Split(New String() {vbCrLf}, StringSplitOptions.None)
+        Dim dayNumber As Integer
+
+        If Integer.TryParse(parts(0), dayNumber) Then
+            Dim selectedDate As New Date(_currentYear, _currentMonth, dayNumber)
+
+            ' SAVE the clicked date into TemporaryData
+            TemporaryData.BookingDate = selectedDate
+
+            ' Optional: Show confirmation
+            MessageBox.Show("Selected Date: " & selectedDate.ToShortDateString(), "Date Selected", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
-
-        Dim dayNumber As Integer = Integer.Parse(clickedLabel.Text)
-        Dim selectedDate As New Date(_currentYear, _currentMonth, dayNumber)
-
-        ' SAVE the clicked date into TemporaryData
-        TemporaryData.BookingDate = selectedDate
-
-        ' (Optional) You can show confirmation
-        MessageBox.Show("Selected Date: " & selectedDate.ToShortDateString(), "Date Selected", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-
     End Sub
 
     Private Sub btnPrevious_Click(sender As Object, e As EventArgs) Handles btnBackDate.Click
@@ -200,8 +191,6 @@ Public Class Calendar2
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNextDate.Click
         NavigateMonths(1)
     End Sub
-
-
 
     Private Sub NavigateMonths(direction As Integer)
         _currentMonth += direction
@@ -217,37 +206,33 @@ Public Class Calendar2
         BuildCalendar(New Date(_currentYear, _currentMonth, 1))
     End Sub
 
-
-
-
-
     Private Function GetBookedDates(month As Integer, year As Integer) As Dictionary(Of Date, String)
         Dim bookedStatusDates As New Dictionary(Of Date, String)
         Dim connStr As String = "server=localhost;user id=root;password=rdtimbangMysql1;database=adminmain"
         Dim query As String = "SELECT bookingDate, bookingStatus FROM bookingtable WHERE MONTH(bookingDate) = @month AND YEAR(bookingDate) = @year"
 
-        Using conn As New MySqlConnection(connStr)
-            Using cmd As New MySqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@month", month)
-                cmd.Parameters.AddWithValue("@year", year)
+        Try
+            Using conn As New MySqlConnection(connStr)
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@month", month)
+                    cmd.Parameters.AddWithValue("@year", year)
 
-                conn.Open()
-                Using reader As MySqlDataReader = cmd.ExecuteReader()
-                    While reader.Read()
-                        Dim dateValue As Date = CDate(reader("bookingDate"))
-                        Dim status As String = reader("bookingStatus").ToString()
-                        bookedStatusDates(dateValue) = status
-                    End While
+                    conn.Open()
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+                        While reader.Read()
+                            Dim dateValue As Date = CDate(reader("bookingDate"))
+                            Dim status As String = reader("bookingStatus").ToString().ToLower()
+                            bookedStatusDates(dateValue) = status
+                        End While
+                    End Using
                 End Using
             End Using
-        End Using
+        Catch ex As Exception
+            MessageBox.Show($"Database error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
         Return bookedStatusDates
     End Function
-
-
-
-
 
 
 

@@ -2,10 +2,10 @@
 
 Class Form1
 
-    Dim animalsPage As New Interface2()
-    Dim page3 As New Interface3
-    Dim homePage As New Interface1()
-    Dim AboutUs As New Interface4
+    Public animalsPage As New Interface2()
+    Public page3 As New Interface3
+    Public homePage As New Interface1()
+    Public AboutUs As New Interface4
 
     Private WithEvents scrollTimer As New Timer With {.Interval = 10}
 
@@ -179,6 +179,14 @@ Class Form1
     Private Sub btnSignIn_Click(sender As Object, e As EventArgs) Handles btnBooknow.Click
         booking.Show()
         Me.Hide()
+    End Sub
+
+    Public Sub GoToPage(page As UserControl, pageName As String)
+
+        SmoothScrollToPage(page)
+        scrollTimer.Start()
+
+        ButtonColorChanger.ChangeButtonColor(pageName, btnServices, btnhmm, btnHome, btnAboutUs)
     End Sub
 
 
