@@ -14,7 +14,6 @@ C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Interf
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Interface3.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Interface1.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Interface4.resources
-C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Int1v2.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.booking.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.bkYesOrNo.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Login.resources

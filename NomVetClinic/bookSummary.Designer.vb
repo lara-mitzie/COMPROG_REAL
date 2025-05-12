@@ -45,6 +45,8 @@ Partial Class bookSummary
         Me.lblServicePrice = New System.Windows.Forms.Label()
         Me.lblBookingDate = New System.Windows.Forms.Label()
         Me.btnConfirm = New System.Windows.Forms.Button()
+        Me.lblOwnerAge = New System.Windows.Forms.Label()
+        Me.lblGender = New System.Windows.Forms.Label()
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAbovebuttons2.SuspendLayout()
         Me.SuspendLayout()
@@ -102,7 +104,7 @@ Partial Class bookSummary
         '
         Me.lblOwnerName.AutoSize = True
         Me.lblOwnerName.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOwnerName.Location = New System.Drawing.Point(191, 262)
+        Me.lblOwnerName.Location = New System.Drawing.Point(299, 224)
         Me.lblOwnerName.Name = "lblOwnerName"
         Me.lblOwnerName.Size = New System.Drawing.Size(77, 28)
         Me.lblOwnerName.TabIndex = 9
@@ -112,7 +114,7 @@ Partial Class bookSummary
         '
         Me.lblEmailAdd.AutoSize = True
         Me.lblEmailAdd.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmailAdd.Location = New System.Drawing.Point(191, 350)
+        Me.lblEmailAdd.Location = New System.Drawing.Point(247, 393)
         Me.lblEmailAdd.Name = "lblEmailAdd"
         Me.lblEmailAdd.Size = New System.Drawing.Size(77, 28)
         Me.lblEmailAdd.TabIndex = 10
@@ -122,7 +124,7 @@ Partial Class bookSummary
         '
         Me.lblAddress.AutoSize = True
         Me.lblAddress.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAddress.Location = New System.Drawing.Point(191, 434)
+        Me.lblAddress.Location = New System.Drawing.Point(283, 455)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(77, 28)
         Me.lblAddress.TabIndex = 11
@@ -132,7 +134,7 @@ Partial Class bookSummary
         '
         Me.lblPhoneNumber.AutoSize = True
         Me.lblPhoneNumber.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPhoneNumber.Location = New System.Drawing.Point(191, 520)
+        Me.lblPhoneNumber.Location = New System.Drawing.Point(257, 527)
         Me.lblPhoneNumber.Name = "lblPhoneNumber"
         Me.lblPhoneNumber.Size = New System.Drawing.Size(77, 28)
         Me.lblPhoneNumber.TabIndex = 12
@@ -262,11 +264,33 @@ Partial Class bookSummary
         Me.btnConfirm.Text = "CONFIRM"
         Me.btnConfirm.UseVisualStyleBackColor = True
         '
+        'lblOwnerAge
+        '
+        Me.lblOwnerAge.AutoSize = True
+        Me.lblOwnerAge.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOwnerAge.Location = New System.Drawing.Point(187, 280)
+        Me.lblOwnerAge.Name = "lblOwnerAge"
+        Me.lblOwnerAge.Size = New System.Drawing.Size(77, 28)
+        Me.lblOwnerAge.TabIndex = 25
+        Me.lblOwnerAge.Text = "Label1"
+        '
+        'lblGender
+        '
+        Me.lblGender.AutoSize = True
+        Me.lblGender.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGender.Location = New System.Drawing.Point(233, 333)
+        Me.lblGender.Name = "lblGender"
+        Me.lblGender.Size = New System.Drawing.Size(77, 28)
+        Me.lblGender.TabIndex = 26
+        Me.lblGender.Text = "Label1"
+        '
         'bookSummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 768)
+        Me.Controls.Add(Me.lblGender)
+        Me.Controls.Add(Me.lblOwnerAge)
         Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.lblBookingDate)
         Me.Controls.Add(Me.lblServicePrice)
@@ -317,4 +341,6 @@ Partial Class bookSummary
     Friend WithEvents lblServicePrice As Label
     Friend WithEvents lblBookingDate As Label
     Friend WithEvents btnConfirm As Button
+    Friend WithEvents lblOwnerAge As Label
+    Friend WithEvents lblGender As Label
 End Class

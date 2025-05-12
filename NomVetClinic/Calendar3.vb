@@ -15,6 +15,7 @@ Public Class Calendar3
         MakeButtonRounded(btnBackDate, 48)
         MakeButtonRounded(btnConfirm, 48)
         MakeButtonRounded(btnNextDate, 48)
+        MakeButtonRounded(btnBack, 48)
 
         positonsPanels.btnNextDateCAl(btnNextDate)
         positonsPanels.btnConfirmCAl(btnConfirm)
@@ -25,6 +26,11 @@ Public Class Calendar3
         tableCalendar.BackColor = Color.FromArgb(253, 253, 248)
         lblMonth.BackColor = Color.FromArgb(253, 253, 248)
         lblMonth.ForeColor = Color.FromArgb(80, 89, 80)
+
+        btnBack.BackColor = Color.FromArgb(166, 147, 140)
+
+
+
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
@@ -175,8 +181,12 @@ Public Class Calendar3
             ' SAVE the clicked date into TemporaryData
             TemporaryData.BookingDate = selectedDate
 
-            ' Optional: Show confirmation
-            MessageBox.Show("Selected Date: " & selectedDate.ToShortDateString(), "Date Selected", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            If DialogResult.OK = MessageBox.Show("Selected Date: " & selectedDate.ToShortDateString(), "Date Selected", MessageBoxButtons.OK, MessageBoxIcon.Information) Then
+                clickedLabel.BackColor = Color.FromArgb(159, 214, 118)
+
+                clickedLabel.Text &= vbCrLf & "Selected"
+            End If
         End If
     End Sub
 
@@ -232,6 +242,7 @@ Public Class Calendar3
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
+        Form1.Close()
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnMinimize.Click
@@ -292,5 +303,11 @@ Public Class Calendar3
     Private Sub btnBackDateNow_MouseEnter(sender As Object, e As EventArgs) Handles btnBackDate.MouseLeave
         isMouseOver = False
         btnBackDate.Invalidate()
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        pickServices2.Show()
+        Me.Close()
+
     End Sub
 End Class

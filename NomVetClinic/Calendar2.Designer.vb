@@ -35,6 +35,7 @@ Partial Class Calendar2
         Me.tableCalendar = New System.Windows.Forms.TableLayoutPanel()
         Me.pctMain = New System.Windows.Forms.PictureBox()
         Me.pctBlur = New System.Windows.Forms.PictureBox()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.pnlAbovebuttons2.SuspendLayout()
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -137,7 +138,7 @@ Partial Class Calendar2
         Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117.0!))
         Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112.0!))
         Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113.0!))
-        Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110.0!))
+        Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112.0!))
         Me.tableCalendar.Location = New System.Drawing.Point(183, 309)
         Me.tableCalendar.Name = "tableCalendar"
         Me.tableCalendar.RowCount = 6
@@ -172,11 +173,23 @@ Partial Class Calendar2
         Me.pctBlur.TabIndex = 19
         Me.pctBlur.TabStop = False
         '
+        'btnBack
+        '
+        Me.btnBack.FlatAppearance.BorderSize = 0
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Image = CType(resources.GetObject("btnBack.Image"), System.Drawing.Image)
+        Me.btnBack.Location = New System.Drawing.Point(29, 39)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(65, 58)
+        Me.btnBack.TabIndex = 20
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'Calendar2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1863, 875)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.pnlAbovebuttons2)
         Me.Controls.Add(Me.lblMonth)
         Me.Controls.Add(Me.btnNextDate)
@@ -208,4 +221,5 @@ Partial Class Calendar2
     Friend WithEvents btnBackDate As Button
     Friend WithEvents tableCalendar As TableLayoutPanel
     Friend WithEvents pctBlur As PictureBox
+    Friend WithEvents btnBack As Button
 End Class

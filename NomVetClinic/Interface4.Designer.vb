@@ -46,7 +46,7 @@ Partial Class Interface4
         '
         Me.lblHome.AutoSize = True
         Me.lblHome.Font = New System.Drawing.Font("Glacial Indifference", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHome.Location = New System.Drawing.Point(1126, 500)
+        Me.lblHome.Location = New System.Drawing.Point(1128, 545)
         Me.lblHome.Name = "lblHome"
         Me.lblHome.Size = New System.Drawing.Size(88, 35)
         Me.lblHome.TabIndex = 1
@@ -56,7 +56,7 @@ Partial Class Interface4
         '
         Me.lblInfo.AutoSize = True
         Me.lblInfo.Font = New System.Drawing.Font("Glacial Indifference", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblInfo.Location = New System.Drawing.Point(1138, 552)
+        Me.lblInfo.Location = New System.Drawing.Point(1140, 582)
         Me.lblInfo.Name = "lblInfo"
         Me.lblInfo.Size = New System.Drawing.Size(63, 35)
         Me.lblInfo.TabIndex = 2
@@ -66,7 +66,7 @@ Partial Class Interface4
         '
         Me.lblServices.AutoSize = True
         Me.lblServices.Font = New System.Drawing.Font("Glacial Indifference", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblServices.Location = New System.Drawing.Point(1112, 603)
+        Me.lblServices.Location = New System.Drawing.Point(1114, 619)
         Me.lblServices.Name = "lblServices"
         Me.lblServices.Size = New System.Drawing.Size(121, 35)
         Me.lblServices.TabIndex = 3
@@ -76,7 +76,7 @@ Partial Class Interface4
         '
         Me.lblAboutUs.AutoSize = True
         Me.lblAboutUs.Font = New System.Drawing.Font("Glacial Indifference", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAboutUs.Location = New System.Drawing.Point(1112, 653)
+        Me.lblAboutUs.Location = New System.Drawing.Point(1109, 655)
         Me.lblAboutUs.Name = "lblAboutUs"
         Me.lblAboutUs.Size = New System.Drawing.Size(131, 35)
         Me.lblAboutUs.TabIndex = 4

@@ -12,6 +12,8 @@ Public Class bookSummary
         lblEmailAdd.Text = TemporaryData.EmailAddress
         lblAddress.Text = TemporaryData.Address
         lblPhoneNumber.Text = TemporaryData.ContactNumber
+        lblOwnerAge.Text = TemporaryData.ownerAge
+        lblGender.Text = TemporaryData.ownerSex
 
         lblPetName.Text = TemporaryData.petName
         lblDateBirth.Text = TemporaryData.petBirthday
@@ -31,7 +33,8 @@ Public Class bookSummary
         Dim labels As Label() = {
         lblOwnerName, lblEmailAdd, lblAddress, lblPhoneNumber, lblPetName,
         lblDateBirth, lblAge, lblWeight, lblPetSex, lblPetType,
-        lblVaccination, lblBreed, lblServiceType, lblServicePrice, lblBookingDate
+        lblVaccination, lblBreed, lblServiceType, lblServicePrice, lblBookingDate,
+        lblOwnerAge, lblGender
     }
 
         For Each tb As Label In labels
@@ -58,14 +61,19 @@ Public Class bookSummary
             cmd.Connection = dataInfo
 
             ' Insert owner information
-            cmd.CommandText = "INSERT INTO ownerinformation(ownerName, EmailAddress, contactNumber, address, ownerCode) 
-                           VALUES (@ownerName, @EmailAddress, @contactNumber, @address,@ownerCode)"
+
+
+            cmd.CommandText = "INSERT INTO ownerinformation(ownerName, EmailAddress, contactNumber, address,ownerSex,  ownerAge, ownerCode) 
+                   VALUES (@ownerName, @EmailAddress, @contactNumber, @address,@ownerSex,  @ownerAge, @ownerCode)"
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@ownerName", TemporaryData.OwnerName)
             cmd.Parameters.AddWithValue("@EmailAddress", TemporaryData.EmailAddress)
             cmd.Parameters.AddWithValue("@contactNumber", TemporaryData.ContactNumber)
             cmd.Parameters.AddWithValue("@address", TemporaryData.Address)
             cmd.Parameters.AddWithValue("@ownerCode", TemporaryData.userCode)
+            cmd.Parameters.AddWithValue("@ownerSex", TemporaryData.ownerSex)
+            cmd.Parameters.AddWithValue("@ownerAge", TemporaryData.ownerAge)
+
             cmd.ExecuteNonQuery()
 
             ' Get the last inserted ownerID

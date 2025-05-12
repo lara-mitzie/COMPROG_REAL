@@ -34,8 +34,11 @@ Partial Class Calendar
         Me.btnConfirm = New System.Windows.Forms.Button()
         Me.btnNextDate = New System.Windows.Forms.Button()
         Me.lblMonth = New System.Windows.Forms.Label()
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.pctBlur = New System.Windows.Forms.PictureBox()
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAbovebuttons2.SuspendLayout()
+        CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pctMain
@@ -98,7 +101,7 @@ Partial Class Calendar
         Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117.0!))
         Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112.0!))
         Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113.0!))
-        Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106.0!))
+        Me.tableCalendar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108.0!))
         Me.tableCalendar.Location = New System.Drawing.Point(183, 309)
         Me.tableCalendar.Name = "tableCalendar"
         Me.tableCalendar.RowCount = 6
@@ -159,11 +162,34 @@ Partial Class Calendar
         Me.lblMonth.TabIndex = 11
         Me.lblMonth.Text = "Label1"
         '
+        'btnBack
+        '
+        Me.btnBack.FlatAppearance.BorderSize = 0
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Image = CType(resources.GetObject("btnBack.Image"), System.Drawing.Image)
+        Me.btnBack.Location = New System.Drawing.Point(28, 39)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(65, 58)
+        Me.btnBack.TabIndex = 12
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
+        'pctBlur
+        '
+        Me.pctBlur.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pctBlur.Image = CType(resources.GetObject("pctBlur.Image"), System.Drawing.Image)
+        Me.pctBlur.Location = New System.Drawing.Point(0, 0)
+        Me.pctBlur.Name = "pctBlur"
+        Me.pctBlur.Size = New System.Drawing.Size(1881, 922)
+        Me.pctBlur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pctBlur.TabIndex = 20
+        Me.pctBlur.TabStop = False
+        '
         'Calendar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1881, 922)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.lblMonth)
         Me.Controls.Add(Me.btnNextDate)
         Me.Controls.Add(Me.btnConfirm)
@@ -171,12 +197,14 @@ Partial Class Calendar
         Me.Controls.Add(Me.tableCalendar)
         Me.Controls.Add(Me.pnlAbovebuttons2)
         Me.Controls.Add(Me.pctMain)
+        Me.Controls.Add(Me.pctBlur)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Calendar"
         Me.Text = "Calendar"
         CType(Me.pctMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAbovebuttons2.ResumeLayout(False)
+        CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -192,4 +220,6 @@ Partial Class Calendar
     Friend WithEvents btnConfirm As Button
     Friend WithEvents btnNextDate As Button
     Friend WithEvents lblMonth As Label
+    Friend WithEvents btnBack As Button
+    Friend WithEvents pctBlur As PictureBox
 End Class

@@ -35,6 +35,9 @@ Partial Class Ownerinformation
         Me.txtContactNumber = New System.Windows.Forms.TextBox()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.txtAge = New System.Windows.Forms.TextBox()
+        Me.cbSex = New System.Windows.Forms.ComboBox()
+        Me.txtGetSex = New System.Windows.Forms.TextBox()
         Me.pnlAbovebuttons3.SuspendLayout()
         CType(Me.pctBoxMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -95,7 +98,7 @@ Partial Class Ownerinformation
         Me.txtFullName.BackColor = System.Drawing.SystemColors.Highlight
         Me.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtFullName.Font = New System.Drawing.Font("Glacial Indifference", 25.8!, System.Drawing.FontStyle.Bold)
-        Me.txtFullName.Location = New System.Drawing.Point(256, 392)
+        Me.txtFullName.Location = New System.Drawing.Point(256, 348)
         Me.txtFullName.Name = "txtFullName"
         Me.txtFullName.Size = New System.Drawing.Size(548, 52)
         Me.txtFullName.TabIndex = 5
@@ -105,7 +108,7 @@ Partial Class Ownerinformation
         Me.txtEmailAdd.BackColor = System.Drawing.SystemColors.Highlight
         Me.txtEmailAdd.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEmailAdd.Font = New System.Drawing.Font("Glacial Indifference", 25.8!, System.Drawing.FontStyle.Bold)
-        Me.txtEmailAdd.Location = New System.Drawing.Point(256, 505)
+        Me.txtEmailAdd.Location = New System.Drawing.Point(256, 560)
         Me.txtEmailAdd.Name = "txtEmailAdd"
         Me.txtEmailAdd.Size = New System.Drawing.Size(548, 52)
         Me.txtEmailAdd.TabIndex = 6
@@ -115,7 +118,7 @@ Partial Class Ownerinformation
         Me.txtAddress.BackColor = System.Drawing.SystemColors.Highlight
         Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtAddress.Font = New System.Drawing.Font("Glacial Indifference", 25.8!, System.Drawing.FontStyle.Bold)
-        Me.txtAddress.Location = New System.Drawing.Point(256, 618)
+        Me.txtAddress.Location = New System.Drawing.Point(256, 662)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(548, 52)
         Me.txtAddress.TabIndex = 7
@@ -125,7 +128,7 @@ Partial Class Ownerinformation
         Me.txtContactNumber.BackColor = System.Drawing.SystemColors.Highlight
         Me.txtContactNumber.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtContactNumber.Font = New System.Drawing.Font("Glacial Indifference", 25.8!, System.Drawing.FontStyle.Bold)
-        Me.txtContactNumber.Location = New System.Drawing.Point(256, 730)
+        Me.txtContactNumber.Location = New System.Drawing.Point(256, 773)
         Me.txtContactNumber.Name = "txtContactNumber"
         Me.txtContactNumber.Size = New System.Drawing.Size(548, 52)
         Me.txtContactNumber.TabIndex = 8
@@ -137,7 +140,7 @@ Partial Class Ownerinformation
         Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNext.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNext.ForeColor = System.Drawing.Color.White
-        Me.btnNext.Location = New System.Drawing.Point(163, 844)
+        Me.btnNext.Location = New System.Drawing.Point(134, 874)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(739, 85)
         Me.btnNext.TabIndex = 9
@@ -160,11 +163,45 @@ Partial Class Ownerinformation
         Me.btnBack.TabIndex = 10
         Me.btnBack.UseVisualStyleBackColor = False
         '
+        'txtAge
+        '
+        Me.txtAge.BackColor = System.Drawing.SystemColors.Highlight
+        Me.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtAge.Font = New System.Drawing.Font("Glacial Indifference", 25.8!, System.Drawing.FontStyle.Bold)
+        Me.txtAge.Location = New System.Drawing.Point(200, 464)
+        Me.txtAge.Name = "txtAge"
+        Me.txtAge.Size = New System.Drawing.Size(269, 52)
+        Me.txtAge.TabIndex = 11
+        '
+        'cbSex
+        '
+        Me.cbSex.Font = New System.Drawing.Font("Glacial Indifference", 20.8!, System.Drawing.FontStyle.Bold)
+        Me.cbSex.FormattingEnabled = True
+        Me.cbSex.Items.AddRange(New Object() {"MALE", "FEMALE"})
+        Me.cbSex.Location = New System.Drawing.Point(572, 462)
+        Me.cbSex.Name = "cbSex"
+        Me.cbSex.Size = New System.Drawing.Size(285, 50)
+        Me.cbSex.TabIndex = 12
+        '
+        'txtGetSex
+        '
+        Me.txtGetSex.BackColor = System.Drawing.SystemColors.Highlight
+        Me.txtGetSex.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtGetSex.Font = New System.Drawing.Font("Glacial Indifference", 25.8!, System.Drawing.FontStyle.Bold)
+        Me.txtGetSex.Location = New System.Drawing.Point(572, 461)
+        Me.txtGetSex.Name = "txtGetSex"
+        Me.txtGetSex.ReadOnly = True
+        Me.txtGetSex.Size = New System.Drawing.Size(269, 52)
+        Me.txtGetSex.TabIndex = 13
+        '
         'Ownerinformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1902, 1033)
+        Me.Controls.Add(Me.txtGetSex)
+        Me.Controls.Add(Me.cbSex)
+        Me.Controls.Add(Me.txtAge)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.txtContactNumber)
@@ -195,4 +232,7 @@ Partial Class Ownerinformation
     Friend WithEvents txtContactNumber As TextBox
     Friend WithEvents btnNext As Button
     Friend WithEvents btnBack As Button
+    Friend WithEvents txtAge As TextBox
+    Friend WithEvents cbSex As ComboBox
+    Friend WithEvents txtGetSex As TextBox
 End Class

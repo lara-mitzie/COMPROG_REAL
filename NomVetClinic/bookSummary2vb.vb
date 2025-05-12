@@ -90,8 +90,10 @@ Public Class bookSummary2vb
             customerAccount.RefreshCustomerAccount()
             customerAccount.Show()
             TemporaryData.Clear()
-            Form1.Hide()
-            Me.Hide()
+            Calendar2.Close()
+            Form1.Show()
+            ' Form1.Hide()
+            'Me.Hide()
 
 
         Catch ex As Exception

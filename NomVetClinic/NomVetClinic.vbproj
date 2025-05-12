@@ -162,12 +162,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="functions.vb" />
-    <Compile Include="Int1v2.Designer.vb">
-      <DependentUpon>Int1v2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Int1v2.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Interface1.Designer.vb">
       <DependentUpon>Interface1.vb</DependentUpon>
     </Compile>
@@ -298,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Int1v2.resx">
-      <DependentUpon>Int1v2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface1.resx">
       <DependentUpon>Interface1.vb</DependentUpon>

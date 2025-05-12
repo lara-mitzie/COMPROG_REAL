@@ -287,25 +287,25 @@ Module positonsPanels
 
     Public Sub txtFullNameON(textbox As TextBox)
         Dim x As Integer = 210
-        Dim y As Integer = 318
+        Dim y As Integer = 290
 
         textbox.Location = New Point(x, y)
     End Sub
     Public Sub txtEAddressOn(textbox As TextBox)
         Dim x As Integer = 210
-        Dim y As Integer = 415
+        Dim y As Integer = 468
 
         textbox.Location = New Point(x, y)
     End Sub
     Public Sub txtAddressOn(textbox As TextBox)
         Dim x As Integer = 210
-        Dim y As Integer = 513
+        Dim y As Integer = 558
 
         textbox.Location = New Point(x, y)
     End Sub
     Public Sub txtCNumberON(textbox As TextBox)
         Dim x As Integer = 210
-        Dim y As Integer = 608
+        Dim y As Integer = 648
 
         textbox.Location = New Point(x, y)
     End Sub
@@ -313,7 +313,7 @@ Module positonsPanels
 
     Public Sub btnNextON(button As Button)
         Dim x As Integer = 122
-        Dim y As Integer = 690
+        Dim y As Integer = 720
 
         button.Location = New Point(x, y)
     End Sub

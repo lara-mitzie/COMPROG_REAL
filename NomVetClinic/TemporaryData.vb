@@ -3,6 +3,9 @@
     Public Property OwnerName As String
     Public Property EmailAddress As String
     Public Property ContactNumber As Long
+    Public Property ownerSex As String
+    Public Property ownerAge As Integer
+
     Public Property Address As String
 
 

@@ -108,10 +108,10 @@ Public Class customerAccount
 
                 ' Now get pet information
                 Dim petQuery As String = "
-                SELECT petID, petName, petSex, petAge, petBirthday, petWeight, petBreed, petVacStatus
-                FROM petinformation
-                WHERE ownerID = @ownerID
-                ORDER BY petName"
+                    SELECT petID, petName, petSex, petAge, petBirthday, petWeight, petBreed, petVacStatus
+                    FROM petinformation
+                    WHERE ownerID = @ownerID
+                    ORDER BY petName"
 
                 Using cmdPet As New MySqlCommand(petQuery, conn)
                     cmdPet.Parameters.Add("@ownerID", MySqlDbType.Int32).Value = ownerId
@@ -123,11 +123,11 @@ Public Class customerAccount
                         If reader.HasRows Then
                             While reader.Read()
                                 AddPetPanel(
-                                    reader("petID").ToString(),
-                                    reader("petName").ToString(),
-                                    reader("petBreed").ToString(),
-                                    reader("petSex").ToString()
-                                )
+                                        reader("petID").ToString(),
+                                        reader("petName").ToString(),
+                                        reader("petBreed").ToString(),
+                                        reader("petSex").ToString()
+                                    )
                             End While
 
                             If petPanelCount > 0 Then
@@ -372,9 +372,9 @@ Public Class customerAccount
 
                 ' Query to get the most recent visit date
                 Dim query As String = "
-                SELECT bookingDate
-                FROM bookingtable 
-                WHERE petID = @petID"
+                    SELECT bookingDate
+                    FROM bookingtable 
+                    WHERE petID = @petID"
 
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.Add("@petID", MySqlDbType.Int32).Value = petID
@@ -407,10 +407,10 @@ Public Class customerAccount
 
                 ' Query to get the latest booking status
                 Dim query As String = "
-                SELECT bookingStatus 
-                FROM bookingtable
-                WHERE petID = @petID 
-                "
+                    SELECT bookingStatus 
+                    FROM bookingtable
+                    WHERE petID = @petID 
+                    "
 
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.Add("@petID", MySqlDbType.Int32).Value = petID
@@ -500,6 +500,7 @@ Public Class customerAccount
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles btnLogOut.Click
         TemporaryData.LoggedInOwnerID = 0
+        TemporaryData.Clear()
         Login.Show()
         Me.Close()
     End Sub

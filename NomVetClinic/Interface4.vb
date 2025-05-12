@@ -56,6 +56,7 @@
     End Sub
 
     Private Sub lblServices_Click(sender As Object, e As EventArgs) Handles lblServices.Click
+
         Dim mainForm As Form1 = CType(Me.FindForm(), Form1)
         mainForm.GoToPage(mainForm.page3, "Interface3")
     End Sub
