@@ -2,6 +2,7 @@
     Private isMouseOver As Boolean = False
     Private Sub Postions(sender As Object, e As EventArgs) Handles MyBase.Load
         AddHandler btnBookNow1.Paint, AddressOf btnBookNow_Paint
+
         MakeButtonRounded(btnBookNow1, 55)
         'positonsPanels.PosPanels(pnlButtons)
         positonsPanels.BookPosition(btnBookNow1)
@@ -32,6 +33,8 @@
         booking.Show()
         Form1.Hide()
     End Sub
+
+
 
 
 End Class

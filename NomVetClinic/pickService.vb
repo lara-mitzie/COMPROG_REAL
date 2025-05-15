@@ -21,6 +21,13 @@
         positonsPanels.btnBackPS(btnBack)
         lblPrice.BackColor = Color.FromArgb(209, 226, 160)
         lblPrice.ForeColor = Color.FromArgb(80, 89, 80)
+
+        If TemporaryData.petvacStatus = "COMPLETE" Then
+            btnVaccine.Enabled = False
+            btnVaccine.Text = "VACCINATION (Completed)"
+            btnVaccine.BackColor = Color.LightGray
+        End If
+
     End Sub
 
     Private Sub btnCheckUp_Click(sender As Object, e As EventArgs) Handles btnCheckUp.Click
@@ -101,24 +108,18 @@
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-
         If String.IsNullOrEmpty(TemporaryData.ServiceType) Then
             MessageBox.Show("Please select a service (Check-Up or Vaccination) before proceeding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
-
-
         Calendar.Show()
         Me.Hide()
     End Sub
-
-
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
         Form1.Close()
     End Sub
-
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
@@ -128,19 +129,15 @@
         PanelAboveSlide.SlidePanel(pnlAbovebuttons2, pnlTimer8)
     End Sub
 
-
-
     'pnl Button Mouse enter
     Private Sub pctHomePage_MouseEnter(sender As Object, e As EventArgs) Handles pctMain.MouseEnter
         PanelAboveSlide.MouseEnter(pnlAbovebuttons2, pnlTimer8)
     End Sub
 
-
     'pnl Button Mouse Move
     Private Sub MouseMovePanel(sender As Object, e As MouseEventArgs) Handles pctMain.MouseMove
         PanelAboveSlide.MouseMove(pnlAbovebuttons2, e, pnlTimer8)
     End Sub
-
 
     Private Sub btnBookNow_Paint(sender As Object, e As PaintEventArgs)
         If isMouseOver Then
@@ -163,6 +160,6 @@
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         petInfo.Show()
         Me.Close()
-
     End Sub
+
 End Class

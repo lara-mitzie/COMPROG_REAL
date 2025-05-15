@@ -85,6 +85,26 @@ Module UIHelpers
         frm.Region = New Region(path)
     End Sub
 
+    Public Sub MakeFlowLayooutRounded(frm As FlowLayoutPanel, radius As Integer)
+        Dim path As New GraphicsPath()
+        Dim rect As Rectangle = frm.ClientRectangle
+        Dim diameter As Integer = radius * 2
+
+        path.StartFigure()
+        path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90)
+        path.AddLine(rect.X + radius, rect.Y, rect.Right - radius, rect.Y)
+        path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90)
+        path.AddLine(rect.Right, rect.Y + radius, rect.Right, rect.Bottom - radius)
+        path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90)
+        path.AddLine(rect.Right - radius, rect.Bottom, rect.X + radius, rect.Bottom)
+        path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90)
+        path.AddLine(rect.X, rect.Bottom - radius, rect.X, rect.Y + radius)
+        path.CloseFigure()
+
+
+        frm.Region = New Region(path)
+    End Sub
+
 
     Public Sub MakeButtonRounded(btn As Button, radius As Integer)
         Dim path As New GraphicsPath()

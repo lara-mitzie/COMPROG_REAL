@@ -27,6 +27,16 @@ NomVetClinic
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:NomVetClinic.My.Resources.Resources.eye_green">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NomVetClinic.My.Resources.Resources.eye_white">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:NomVetClinic.My.Resources.Resources.Feline">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

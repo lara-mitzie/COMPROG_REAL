@@ -1,5 +1,7 @@
 ﻿
 
+Imports Mysqlx.XDevAPI.Common
+
 Class Form1
 
     Public animalsPage As New Interface2()
@@ -11,7 +13,7 @@ Class Form1
 
     'BACKGROUND COLOR
     Private Sub buttonAndTextColor(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.KeyPreview = True
 
         backgroundcolor.buttonTextColor(btnHome)
         backgroundcolor.buttonTextColor(btnServices)
@@ -189,7 +191,21 @@ Class Form1
         ButtonColorChanger.ChangeButtonColor(pageName, btnServices, btnhmm, btnHome, btnAboutUs)
     End Sub
 
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.Control AndAlso e.KeyCode = Keys.OemPeriod Then
+            MessageBox.Show("Admin Access Detected!", "Admin Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
+            pctBlur.Visible = True
+            pctBlur.BringToFront()
 
+            Dim adminLoginForm As New adminAccount()
+            adminLoginForm.ShowDialog()
+
+            pctBlur.Visible = False
+            pctBlur.SendToBack()
+
+
+        End If
+    End Sub
 End Class

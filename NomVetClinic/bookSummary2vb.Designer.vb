@@ -105,7 +105,7 @@ Partial Class bookSummary2vb
         '
         Me.lblService.AutoSize = True
         Me.lblService.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.lblService.Location = New System.Drawing.Point(215, 259)
+        Me.lblService.Location = New System.Drawing.Point(126, 257)
         Me.lblService.Name = "lblService"
         Me.lblService.Size = New System.Drawing.Size(77, 28)
         Me.lblService.TabIndex = 12
@@ -115,7 +115,7 @@ Partial Class bookSummary2vb
         '
         Me.lblServicePrice.AutoSize = True
         Me.lblServicePrice.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.lblServicePrice.Location = New System.Drawing.Point(215, 340)
+        Me.lblServicePrice.Location = New System.Drawing.Point(126, 339)
         Me.lblServicePrice.Name = "lblServicePrice"
         Me.lblServicePrice.Size = New System.Drawing.Size(82, 28)
         Me.lblServicePrice.TabIndex = 13
@@ -125,7 +125,7 @@ Partial Class bookSummary2vb
         '
         Me.lblBookingdate.AutoSize = True
         Me.lblBookingdate.Font = New System.Drawing.Font("Glacial Indifference", 13.8!, System.Drawing.FontStyle.Bold)
-        Me.lblBookingdate.Location = New System.Drawing.Point(215, 423)
+        Me.lblBookingdate.Location = New System.Drawing.Point(126, 420)
         Me.lblBookingdate.Name = "lblBookingdate"
         Me.lblBookingdate.Size = New System.Drawing.Size(82, 28)
         Me.lblBookingdate.TabIndex = 14

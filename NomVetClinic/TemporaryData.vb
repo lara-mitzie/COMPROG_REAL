@@ -5,7 +5,6 @@
     Public Property ContactNumber As Long
     Public Property ownerSex As String
     Public Property ownerAge As Integer
-
     Public Property Address As String
 
 
@@ -28,8 +27,16 @@
 
     Public Property userCode As Integer
 
+
     Public LoggedInOwnerID As Integer
     Public LoggedInOwnerName As String
+
+
+
+    Public DownpaymentAmount As Decimal
+    Public GcashMobileNumber As String
+    Public GeneratedCode As String
+
 
     Public Sub Clear()
         petName = ""

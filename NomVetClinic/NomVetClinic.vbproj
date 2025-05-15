@@ -66,6 +66,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.2\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -79,6 +84,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -99,6 +105,24 @@
     </Compile>
     <Compile Include="addCode.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminAccount.Designer.vb">
+      <DependentUpon>adminAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adminAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment.Designer.vb">
+      <DependentUpon>Appointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Biiling.Designer.vb">
+      <DependentUpon>Biiling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Biiling.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="bkYesOrNo.Designer.vb">
       <DependentUpon>bkYesOrNo.vb</DependentUpon>
@@ -154,6 +178,12 @@
     <Compile Include="customerAccount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dashboard.Designer.vb">
+      <DependentUpon>dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +192,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="functions.vb" />
+    <Compile Include="history.Designer.vb">
+      <DependentUpon>history.vb</DependentUpon>
+    </Compile>
+    <Compile Include="history.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Interface1.Designer.vb">
       <DependentUpon>Interface1.vb</DependentUpon>
     </Compile>
@@ -198,6 +234,12 @@
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="mainAdmin.Designer.vb">
+      <DependentUpon>mainAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mainAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -209,11 +251,47 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ownerDetailsForm.Designer.vb">
+      <DependentUpon>ownerDetailsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ownerDetailsForm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ownerinformation.Designer.vb">
       <DependentUpon>Ownerinformation.vb</DependentUpon>
     </Compile>
     <Compile Include="Ownerinformation.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentMethod.Designer.vb">
+      <DependentUpon>PaymentMethod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paymentmethod2vb.Designer.vb">
+      <DependentUpon>Paymentmethod2vb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paymentmethod2vb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paymentmethod3.Designer.vb">
+      <DependentUpon>Paymentmethod3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paymentmethod3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="petDetails.Designer.vb">
+      <DependentUpon>petDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="petDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="petDetailsForm.Designer.vb">
+      <DependentUpon>petDetailsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="petDetailsForm.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="petInfo.Designer.vb">
       <DependentUpon>petInfo.vb</DependentUpon>
@@ -232,6 +310,12 @@
     </Compile>
     <Compile Include="PetInformation.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="petOwner.Designer.vb">
+      <DependentUpon>petOwner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="petOwner.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="pickService.Designer.vb">
       <DependentUpon>pickService.vb</DependentUpon>
@@ -263,6 +347,15 @@
     <EmbeddedResource Include="addCode.resx">
       <DependentUpon>addCode.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adminAccount.resx">
+      <DependentUpon>adminAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment.resx">
+      <DependentUpon>Appointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Biiling.resx">
+      <DependentUpon>Biiling.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bkYesOrNo.resx">
       <DependentUpon>bkYesOrNo.vb</DependentUpon>
     </EmbeddedResource>
@@ -290,8 +383,14 @@
     <EmbeddedResource Include="customerAccount.resx">
       <DependentUpon>customerAccount.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dashboard.resx">
+      <DependentUpon>dashboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="history.resx">
+      <DependentUpon>history.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface1.resx">
       <DependentUpon>Interface1.vb</DependentUpon>
@@ -311,14 +410,35 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mainAdmin.resx">
+      <DependentUpon>mainAdmin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ownerDetailsForm.resx">
+      <DependentUpon>ownerDetailsForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ownerinformation.resx">
       <DependentUpon>Ownerinformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentMethod.resx">
+      <DependentUpon>PaymentMethod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paymentmethod2vb.resx">
+      <DependentUpon>Paymentmethod2vb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paymentmethod3.resx">
+      <DependentUpon>Paymentmethod3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="petDetails.resx">
+      <DependentUpon>petDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="petDetailsForm.resx">
+      <DependentUpon>petDetailsForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="petInfo.resx">
       <DependentUpon>petInfo.vb</DependentUpon>
@@ -328,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PetInformation.resx">
       <DependentUpon>PetInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="petOwner.resx">
+      <DependentUpon>petOwner.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pickService.resx">
       <DependentUpon>pickService.vb</DependentUpon>
@@ -363,6 +486,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Reptile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeGreen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointmentGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointmentWhitw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboardgreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboardwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HistoryGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HistoryWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\petOwner green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\petOwner white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets')" />

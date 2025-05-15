@@ -50,3 +50,17 @@ C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.bookSu
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Calendar3.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.pickServices3.resources
 C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.bookSummary3.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.adminAccount.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Appointment.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.dashboard.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.history.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.mainAdmin.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.ownerDetailsForm.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.petowner.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.petDetails.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.petDetailsForm.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.PaymentMethod.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\bin\Debug\QRCoder.dll
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Paymentmethod2vb.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Paymentmethod3.resources
+C:\Users\RD\source\repos\NomVetClinic\NomVetClinic\obj\Debug\NomVetClinic.Biiling.resources

@@ -30,18 +30,20 @@ Partial Class Form1
         Me.pnlButtons = New System.Windows.Forms.Panel()
         Me.btnhmm = New System.Windows.Forms.Button()
         Me.btnServices = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnBooknow = New System.Windows.Forms.Button()
         Me.btnAboutUs = New System.Windows.Forms.Button()
         Me.btnHome = New System.Windows.Forms.Button()
         Me.pnlAbovebuttons = New System.Windows.Forms.Panel()
+        Me.pnlAboveTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnMinimize = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.pnlAboveTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.pctBlur = New System.Windows.Forms.PictureBox()
         Me.pnlBack.SuspendLayout()
         Me.pnlButtons.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAbovebuttons.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlBack
@@ -112,16 +114,6 @@ Partial Class Form1
         Me.btnServices.Text = "INFO"
         Me.btnServices.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(37, 9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(208, 73)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
         'btnBooknow
         '
         Me.btnBooknow.FlatAppearance.BorderSize = 0
@@ -169,6 +161,19 @@ Partial Class Form1
         Me.pnlAbovebuttons.Size = New System.Drawing.Size(1902, 21)
         Me.pnlAbovebuttons.TabIndex = 1
         '
+        'pnlAboveTimer
+        '
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(37, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(208, 73)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
         'btnMinimize
         '
         Me.btnMinimize.BackColor = System.Drawing.Color.White
@@ -195,8 +200,16 @@ Partial Class Form1
         Me.btnExit.TabIndex = 0
         Me.btnExit.UseVisualStyleBackColor = False
         '
-        'pnlAboveTimer
+        'pctBlur
         '
+        Me.pctBlur.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pctBlur.Image = CType(resources.GetObject("pctBlur.Image"), System.Drawing.Image)
+        Me.pctBlur.Location = New System.Drawing.Point(0, 0)
+        Me.pctBlur.Name = "pctBlur"
+        Me.pctBlur.Size = New System.Drawing.Size(1902, 1033)
+        Me.pctBlur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pctBlur.TabIndex = 0
+        Me.pctBlur.TabStop = False
         '
         'Form1
         '
@@ -204,6 +217,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1902, 1033)
         Me.Controls.Add(Me.pnlBack)
+        Me.Controls.Add(Me.pctBlur)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
@@ -211,8 +225,9 @@ Partial Class Form1
         Me.Text = "NOM VET CLINIC"
         Me.pnlBack.ResumeLayout(False)
         Me.pnlButtons.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAbovebuttons.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pctBlur, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -231,4 +246,5 @@ Partial Class Form1
     Friend WithEvents pnlShowInt As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnMinimize As Button
+    Friend WithEvents pctBlur As PictureBox
 End Class

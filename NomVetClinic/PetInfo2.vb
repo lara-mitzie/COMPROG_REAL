@@ -426,6 +426,7 @@
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         customerAccount.Show()
+        TemporaryData.Clear()
         Me.Close()
     End Sub
 

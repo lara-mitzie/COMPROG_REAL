@@ -195,7 +195,6 @@
 
 
 
-
     Private Sub nextCLcike(sender As Object, e As EventArgs) Handles btnNext.Click
 
         If txtPetName.Text = CStr(txtPetName.Tag) OrElse String.IsNullOrWhiteSpace(txtPetName.Text) Then
@@ -267,6 +266,7 @@
         Me.Close()
 
     End Sub
+
 
 
 

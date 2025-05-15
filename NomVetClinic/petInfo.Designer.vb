@@ -239,7 +239,7 @@ Partial Class petInfo
         Me.cbVetStat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbVetStat.Font = New System.Drawing.Font("Glacial Indifference", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbVetStat.FormattingEnabled = True
-        Me.cbVetStat.Items.AddRange(New Object() {"YES", "NO"})
+        Me.cbVetStat.Items.AddRange(New Object() {"COMPLETE", "INCOMPLETE"})
         Me.cbVetStat.Location = New System.Drawing.Point(169, 677)
         Me.cbVetStat.Name = "cbVetStat"
         Me.cbVetStat.Size = New System.Drawing.Size(678, 43)
